@@ -1,0 +1,110 @@
+services:
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
+    networks:
+      - frontend
+
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: ${DINGDING_DB_PASSWORD:?Mot de passe manquant}
+      MYSQL_ROOT_PASSWORD: ${DINGDING_ROOT_PASSWORD:?Mot de passe root manquant}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - dingding-db
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8081:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DINGDING_DB_PASSWORD:?Mot de passe manquant}
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://dingding.localhost');
+        define('WP_SITEURL', 'http://dingding.localhost');
+    volumes:
+      - wp_data:/var/www/html
+      - ./dingding-club/wp-content:/var/www/html/wp-content
+      - ./php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
+    networks:
+      - frontend
+      - dingding-db
+
+  lgr-db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: lgr
+      MYSQL_USER: lgr
+      MYSQL_PASSWORD: ${LGR_DB_PASSWORD:?Mot de passe LGR manquant}
+      MYSQL_ROOT_PASSWORD: ${LGR_ROOT_PASSWORD:?Mot de passe root LGR manquant}
+    volumes:
+      - lgr_db_data:/var/lib/mysql
+    networks:
+      - lgr-db
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
+  lgr:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      lgr-db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: lgr-db:3306
+      WORDPRESS_DB_USER: lgr
+      WORDPRESS_DB_PASSWORD: ${LGR_DB_PASSWORD:?Mot de passe LGR manquant}
+      WORDPRESS_DB_NAME: lgr
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'http://lgr.localhost');
+        define('WP_SITEURL', 'http://lgr.localhost');
+    volumes:
+      - lgr_wp_data:/var/www/html
+      - ./lgr/wp-content:/var/www/html/wp-content
+      - ./php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
+    networks:
+      - frontend
+      - lgr-db
+
+# Les noms historiques sont conserves pour retrouver les volumes de l'ancien Compose.
+volumes:
+  db_data:
+  wp_data:
+  lgr_db_data:
+  lgr_wp_data:
+
+networks:
+  frontend:
+  dingding-db:
+    internal: true
+
+  lgr-db:
+    internal: true
+

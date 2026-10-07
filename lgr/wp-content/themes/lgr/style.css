@@ -1,0 +1,40 @@
+/*
+Theme Name: Les goûts retrouvés
+Description: Thème de blocs LGR, modifiable dans Gutenberg et dans le code.
+Version: 0.2.0
+Text Domain: lgr
+*/
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.site-header { padding: 28px 20px 0; }
+.header-inner { width: max-content; max-width: 100%; margin-inline: auto; }
+.header-inner .brand { flex: 0 0 100px; margin: 0; }
+.header-inner .brand img { display: block; height: auto; }
+.primary-nav .wp-block-navigation-item__content { position: relative; text-transform: uppercase; white-space: nowrap; text-decoration: none; }
+.primary-nav .wp-block-navigation-item__content::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -5px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+.primary-nav .wp-block-navigation-item__content:hover::after,
+.primary-nav .wp-block-navigation-item__content:focus-visible::after { transform: scaleX(1); }
+.primary-nav .wp-block-navigation__responsive-container.is-menu-open { padding: 24px; }
+.site-content { width: min(1080px, calc(100% - 40px)); margin: 64px auto; }
+.site-content section { scroll-margin-top: 24px; }
+.site-content .wp-block-post-content > section { margin-block-end: 48px; }
+@media (max-width: 599px) {
+  .site-header { padding: 16px 16px 0; }
+  .header-inner { width: 100%; justify-content: space-between; padding-inline: 16px !important; gap: 16px !important; }
+  .site-content { margin-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .primary-nav .wp-block-navigation-item__content::after { transition: none; }
+}

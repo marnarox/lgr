@@ -1,0 +1,92 @@
+[
+  {
+    "family": "Cormorant",
+    "style": "normal",
+    "file": "Cormorant-normal-variable.woff2",
+    "axes": {
+      "wght": [
+        300.0,
+        700.0
+      ]
+    },
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/cormorant/Cormorant%5Bwght%5D.ttf",
+    "revision": "5e8a3ba899557829a76cfdac30fa512bda91d7ca",
+    "sha256": "3ed453ee33ce79b8968bad1ba8308003b37f04db86605c896936dc3ea2c9b3c5",
+    "bytes": 172032
+  },
+  {
+    "family": "Cormorant",
+    "style": "italic",
+    "file": "Cormorant-italic-variable.woff2",
+    "axes": {
+      "wght": [
+        300.0,
+        700.0
+      ]
+    },
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/cormorant/Cormorant-Italic%5Bwght%5D.ttf",
+    "revision": "5e8a3ba899557829a76cfdac30fa512bda91d7ca",
+    "sha256": "cd257bc22d9e7a4f162ca07c0f0c83e27985afc45e68ea55d76c871b4b2cd380",
+    "bytes": 120064
+  },
+  {
+    "family": "Montserrat",
+    "style": "normal",
+    "file": "Montserrat-normal-variable.woff2",
+    "axes": {
+      "wght": [
+        100.0,
+        900.0
+      ]
+    },
+    "source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/555facfb2a18c72c3c0380f0d9c0f060453a9058/fonts/webfonts/Montserrat%5Bwght%5D.woff2",
+    "revision": "555facfb2a18c72c3c0380f0d9c0f060453a9058",
+    "sha256": "ae811d80193e226b5ed958e90e7c5ff7a25bbc7fc0a5a5809ec95fa9004caf3f",
+    "bytes": 211660
+  },
+  {
+    "family": "Montserrat",
+    "style": "italic",
+    "file": "Montserrat-italic-variable.woff2",
+    "axes": {
+      "wght": [
+        100.0,
+        900.0
+      ]
+    },
+    "source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/555facfb2a18c72c3c0380f0d9c0f060453a9058/fonts/webfonts/Montserrat-Italic%5Bwght%5D.woff2",
+    "revision": "555facfb2a18c72c3c0380f0d9c0f060453a9058",
+    "sha256": "c7d97c372c0df7bd00095f07b22615a0428441f68d729c9003407a676baa9a5f",
+    "bytes": 228184
+  },
+  {
+    "family": "Montserrat Alternates",
+    "style": "normal",
+    "file": "MontserratAlternates-normal-variable.woff2",
+    "axes": {
+      "wght": [
+        100.0,
+        900.0
+      ]
+    },
+    "source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/555facfb2a18c72c3c0380f0d9c0f060453a9058/fonts-alternates/webfonts/MontserratAlternates%5Bwght%5D.woff2",
+    "revision": "555facfb2a18c72c3c0380f0d9c0f060453a9058",
+    "sha256": "1b5ac395004928d0e876aaf4dd2224d28ab9114d9c4c60f4647df107e179c1cd",
+    "bytes": 211964
+  },
+  {
+    "family": "Montserrat Alternates",
+    "style": "italic",
+    "file": "MontserratAlternates-italic-variable.woff2",
+    "axes": {
+      "wght": [
+        100.0,
+        900.0
+      ]
+    },
+    "source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/555facfb2a18c72c3c0380f0d9c0f060453a9058/fonts-alternates/webfonts/MontserratAlternates-Italic%5Bwght%5D.woff2",
+    "revision": "555facfb2a18c72c3c0380f0d9c0f060453a9058",
+    "sha256": "034f51da472c8e944d407583b0bf09937118cc85a95f96cd8725c788ee3e2cfd",
+    "bytes": 228488
+  }
+]
