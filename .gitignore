@@ -16,3 +16,6 @@ dingding-club/
 **/wp-content/languages/
 .DS_Store
 Thumbs.db
+# Local safety snapshots; current page structures remain versioned.
+lgr/wp-content/structure/*-before-*.blocks.html
+lgr/wp-content/structure/home-current.blocks.html

@@ -13,9 +13,9 @@ sera fourni par Maxime avant de travailler sur le header.
 
 Source : frame Figma 308:4823. Sections dans l'ordre de la maquette :
 
-1. Introduction : Le goût retrouvé (308:4824).
+1. Introduction : Les goûts retrouvés (308:4824).
 2. Nos marques (308:4856).
-3. Nos produits (308:4876), avec Le goût retrouvé, Aux vraies saveurs et Célinette.
+3. Nos produits (308:4876), avec Les goûts retrouvés, Aux vraies saveurs et Célinette.
 4. Nos valeurs (308:4921).
 5. Où nous trouver (308:5047).
 
@@ -23,17 +23,17 @@ La structure Gutenberg, avec seulement les titres, est conservee dans
 `wp-content/structure/accueil.blocks.html`. Les coquilles "Nos valeur" et
 "Où nous trouvez" sont corrigees. Aucun asset ni mise en page n'est integre.
 Le logo SVG a ete fourni et copie dans le theme `lgr`. Le header est realise
-et le theme actif localement ; le footer sera realise a l'etape de mise en page.
+et le theme actif localement ; le footer Figma 308:5055 est maintenant realise.
 
 ## Palette fournie
 
-| Variable CSS | Couleur |
-| --- | --- |
+| Variable CSS         | Couleur |
+| -------------------- | ------- |
 | --lgr-color-charcoal | #1E1E1E |
-| --lgr-color-cream | #E9DECE |
-| --lgr-color-coral | #D95853 |
-| --lgr-color-sage | #AEC1A6 |
-| --lgr-color-terra | #B57244 |
+| --lgr-color-cream    | #E9DECE |
+| --lgr-color-coral    | #D95853 |
+| --lgr-color-sage     | #AEC1A6 |
+| --lgr-color-terra    | #B57244 |
 
 Variables dans `wp-content/design-tokens/colors.css`, chargees par le theme LGR.
 Le header utilise le fond creme et le texte anthracite. La repartition dans les
@@ -44,3 +44,18 @@ autres sections sera definie lors de la reproduction de la maquette.
 Cormorant (300-700), Montserrat (100-900), Montserrat Alternates (100-900).
 Les versions WOFF2 variables droites et italiques sont dans `wp-content/fonts`.
 Les usages typographiques seront definis a partir de la maquette.
+
+## Echelle des tailles de police
+
+Base : 20 px. Tailles fournies : 8, 12, 20, 32, 52, 85, 137 et 222 px.
+Ces tailles fixes sont disponibles dans Gutenberg via theme.json ; le texte
+utilise 20 px par defaut. L'affectation aux titres et les adaptations mobiles
+restent a definir. Les liens du header utilisent la taille de base de 20 px.
+
+## Textures de fond fournies
+
+- wp-content/themes/lgr/assets/images/rose-bruit.avif : fond prevu pour la hero de l'accueil.
+- wp-content/themes/lgr/assets/images/vert-bruit.avif : fond prevu pour Espace pro.
+
+Fichiers originaux copies sans conversion. Leur mise en page sera realisee lors
+de la composition des sections.
