@@ -1,0 +1,322 @@
+/* Shared frontend/editor layout. Mobile first: 5 columns, 16 px margins/gutters. */
+.wp-site-blocks,
+.editor-styles-wrapper {
+  --lgr-marquee-height: 28px;
+}
+body:has(.lgr-hero) {
+  overflow-x: clip;
+}
+body:has(.lgr-hero) .wp-site-blocks {
+  padding-top: 0;
+}
+body:has(.lgr-hero) .site-content {
+  width: 100%;
+  margin-top: 0;
+}
+body:has(.lgr-hero) .site-content > .wp-block-post-content {
+  max-width: none;
+}
+.lgr-hero {
+  --hero-margin: 16px;
+  --hero-columns: 5;
+  --hero-gutter: 16px;
+  --hero-copy-height: 63.7%;
+  --hero-content-max: 1920px;
+  --hero-photo-start: 63.36%;
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: none !important;
+  height: calc(100vh - var(--lgr-marquee-height, 28px));
+  min-height: 540px;
+  margin: 0 !important;
+  padding: 0;
+  background: var(--lgr-color-coral) url('../../images/rose-bruit.avif')
+    center / cover no-repeat;
+}
+.lgr-hero .hero-copy {
+  display: grid;
+  grid-template-columns: repeat(var(--hero-columns), minmax(0, 1fr));
+  column-gap: var(--hero-gutter);
+  align-content: start;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  height: var(--hero-copy-height);
+  width: 100%;
+  max-width: var(--hero-content-max);
+  margin: 0 auto;
+  padding: 98px var(--hero-margin) 24px;
+  color: var(--lgr-color-cream);
+}
+.lgr-hero .hero-copy > * {
+  grid-column: 1 / -1;
+}
+.lgr-hero .hero-tagline {
+  margin: 0 0 12px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.lgr-hero .hero-title {
+  margin: 0;
+  font-family: 'Cormorant', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  overflow-wrap: normal;
+}
+.lgr-hero .hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 24px 0 0;
+}
+.lgr-hero .hero-actions .wp-block-button__link {
+  padding: 8px 16px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  border-color: var(--lgr-color-cream);
+}
+.lgr-hero .hero-button-secondary {
+  --ripple-fill: var(--lgr-color-cream);
+  --ripple-text: var(--lgr-color-charcoal);
+}
+.lgr-hero .hero-button-secondary .wp-block-button__link {
+  color: var(--lgr-color-cream);
+  background: var(--lgr-color-charcoal);
+  border-color: var(--lgr-color-charcoal);
+}
+.lgr-hero .hero-photo {
+  position: absolute;
+  inset: var(--hero-copy-height) 0 0;
+  margin: 0;
+}
+.lgr-hero .hero-photo-portrait {
+  display: none;
+}
+.lgr-hero .hero-photo-horizontal {
+  display: block;
+}
+.lgr-hero .hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.lgr-hero .hero-button-secondary .wp-block-button__link:focus-visible {
+  color: var(--ripple-text);
+  background: var(--ripple-fill);
+}
+@media (hover: hover) and (pointer: fine) {
+  .lgr-hero .hero-button-secondary .wp-block-button__link:hover {
+    color: var(--ripple-text);
+  }
+}
+/* Tablet: 9 columns, 24 px margins, 16 px gutters. */
+@media (min-width: 600px) {
+  .wp-site-blocks,
+  .editor-styles-wrapper {
+    --lgr-marquee-height: 40px;
+  }
+  .lgr-hero {
+    --hero-margin: 24px;
+    --hero-columns: 9;
+    --hero-copy-height: 58.3%;
+  }
+  .lgr-hero .hero-copy {
+    padding-top: clamp(124px, 17.4vh, 197px);
+  }
+  .lgr-hero .hero-tagline {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+  .lgr-hero .hero-title {
+    font-size: 85px;
+  }
+  .lgr-hero .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 60px;
+  }
+  .lgr-hero .hero-actions .wp-block-button__link {
+    font-size: 20px;
+    padding: 16px 32px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1279px) and (max-height: 950px) {
+  .lgr-hero {
+    min-height: 700px;
+  }
+  .lgr-hero .hero-tagline {
+    margin-bottom: 20px;
+  }
+  .lgr-hero .hero-title {
+    font-size: 52px;
+  }
+  .lgr-hero .hero-actions {
+    gap: 24px;
+    margin-top: 24px;
+  }
+}
+/* Desktop: 12 columns, 100 px margins at 1280 px, 20 px gutters. */
+@media (min-width: 1280px) {
+  .wp-site-blocks,
+  .editor-styles-wrapper {
+    --lgr-marquee-height: 60px;
+  }
+  .lgr-hero {
+    --hero-margin: 100px;
+    --hero-columns: 12;
+    --hero-gutter: 20px;
+    --hero-copy-height: 100%;
+  }
+  .lgr-hero .hero-copy {
+    padding-top: clamp(124px, calc((100vh - 60px) * 0.249), 193px);
+  }
+  .lgr-hero .hero-copy > * {
+    grid-column: 1 / span 6;
+  }
+  .lgr-hero .hero-tagline {
+    margin-bottom: 20px;
+  }
+  .lgr-hero .hero-title {
+    line-height: 1.08;
+  }
+  .lgr-hero .hero-actions {
+    gap: 24px;
+  }
+  .lgr-hero .hero-photo {
+    inset: 0 0 0 var(--hero-photo-start);
+  }
+  .lgr-hero .hero-photo-horizontal {
+    display: none;
+  }
+  .lgr-hero .hero-photo-portrait {
+    display: block;
+  }
+}
+@media (min-width: 1920px) {
+  /* Anchor the photo to the capped grid, while extending it to the right edge. */
+  .lgr-hero {
+    --hero-photo-start: calc(50% + 256.512px);
+  }
+  .lgr-hero .hero-copy {
+    padding-top: 260px;
+  }
+  .lgr-hero .hero-title {
+    font-size: 137px;
+  }
+}
+@media (min-width: 2020px) {
+  .lgr-hero { --hero-margin: 0px; }
+}
+@keyframes lgr-hero-uncover-horizontal {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes lgr-hero-uncover-vertical {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+@keyframes lgr-hero-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  body:has(.lgr-hero) .lgr-hero::before,
+  body:has(.lgr-hero) .lgr-hero .hero-photo::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+  }
+  body:has(.lgr-hero) .lgr-hero::before {
+    inset: 0 0 auto;
+    height: var(--hero-copy-height);
+    background: #1e1e1e;
+    transform-origin: left center;
+  }
+  body:has(.lgr-hero) .lgr-hero .hero-photo::before {
+    inset: 0;
+    background: #e9dece;
+    transform-origin: right center;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running::before,
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-photo::before {
+    animation: lgr-hero-uncover-horizontal 1100ms cubic-bezier(0.76, 0, 0.24, 1)
+      both;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running::before {
+    animation-delay: 250ms;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-photo::before {
+    animation-delay: 450ms;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-tagline,
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-title,
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-actions {
+    animation: lgr-hero-content-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-tagline {
+    animation-delay: 450ms;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-title {
+    animation-delay: 580ms;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-actions {
+    animation-delay: 710ms;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-done::before,
+  body:has(.lgr-hero) .lgr-hero.hero-motion-done .hero-photo::before {
+    content: none;
+  }
+  body:has(.lgr-hero) .lgr-hero:focus-within::before,
+  body:has(.lgr-hero) .lgr-hero:focus-within .hero-photo::before {
+    animation: none;
+    transform: scaleX(0);
+  }
+  body:has(.lgr-hero) .lgr-hero:focus-within .hero-actions {
+    animation: none;
+  }
+}
+@media (min-width: 1280px) and (prefers-reduced-motion: no-preference) {
+  body:has(.lgr-hero) .lgr-hero::before {
+    inset: 0 calc(100% - var(--hero-photo-start)) 0 0;
+    height: auto;
+    transform-origin: center top;
+  }
+  body:has(.lgr-hero) .lgr-hero .hero-photo::before {
+    transform-origin: center bottom;
+  }
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running::before,
+  body:has(.lgr-hero) .lgr-hero.hero-motion-running .hero-photo::before {
+    animation-name: lgr-hero-uncover-vertical;
+  }
+  body:has(.lgr-hero) .lgr-hero:focus-within::before,
+  body:has(.lgr-hero) .lgr-hero:focus-within .hero-photo::before {
+    transform: scaleY(0);
+  }
+}

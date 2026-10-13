@@ -1,0 +1,3 @@
+/* Native responsive attributes control columns, type, colors and spacing. */
+.lgr-range-content { max-width: 1920px; margin-inline: auto; box-sizing: border-box; }
+.lgr-range-header { align-items: end; }

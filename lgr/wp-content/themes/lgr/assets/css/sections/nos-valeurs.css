@@ -1,0 +1,7 @@
+/* Layout complements only: colors, copy, spacing and columns are native blocks. */
+.lgr-values-content {
+  box-sizing: border-box;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+.lgr-values-grid { align-items: start; }

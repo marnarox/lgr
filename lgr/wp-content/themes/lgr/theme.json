@@ -3,7 +3,14 @@
   "version": 3,
   "settings": {
     "appearanceTools": true,
-    "layout": {"contentSize": "1080px", "wideSize": "1280px"},
+    "viewport": {"mobile": "599px", "tablet": "1279px"},
+    "layout": {"contentSize": "1920px", "wideSize": "1920px"},
+    "spacing": {
+      "spacingSizes": [
+        {"slug": "section-gutter", "name": "Marge de section responsive", "size": "var(--lgr-section-gutter)"},
+        {"slug": "section-block", "name": "Padding vertical de section", "size": "var(--lgr-section-block)"}
+      ]
+    },
     "color": {
       "defaultPalette": false,
       "palette": [
@@ -16,6 +23,18 @@
     },
     "typography": {
       "fluid": true,
+      "defaultFontSizes": false,
+      "fontSizes": [
+        {"slug": "size-8", "name": "8 px", "size": "8px", "fluid": false},
+        {"slug": "size-12", "name": "12 px", "size": "12px", "fluid": false},
+        {"slug": "base", "name": "Base — 20 px", "size": "20px", "fluid": false},
+        {"slug": "size-32", "name": "32 px", "size": "32px", "fluid": false},
+        {"slug": "size-52", "name": "52 px", "size": "52px", "fluid": false},
+        {"slug": "size-85", "name": "85 px", "size": "85px", "fluid": false},
+        {"slug": "size-137", "name": "137 px", "size": "137px", "fluid": false},
+        {"slug": "size-222", "name": "222 px", "size": "222px", "fluid": false},
+        {"slug": "brand-heading", "name": "Titre de marque — 32 / 52 / 85 px", "size": "var(--lgr-brand-heading-size)", "fluid": false}
+      ],
       "fontFamilies": [
         {"slug": "cormorant", "name": "Cormorant", "fontFamily": "'Cormorant', serif"},
         {"slug": "montserrat", "name": "Montserrat", "fontFamily": "'Montserrat', sans-serif"},
@@ -25,14 +44,14 @@
   },
   "styles": {
     "color": {"background": "var:preset|color|cream", "text": "var:preset|color|charcoal"},
-    "typography": {"fontFamily": "var:preset|font-family|montserrat", "lineHeight": "1.5"},
+    "typography": {"fontFamily": "var:preset|font-family|montserrat", "fontSize": "var:preset|font-size|base", "lineHeight": "1.5"},
     "elements": {
       "link": {"color": {"text": "var:preset|color|charcoal"}},
       "heading": {"typography": {"fontFamily": "var:preset|font-family|montserrat-alternates", "fontWeight": "400"}},
       "h1": {"typography": {"fontFamily": "var:preset|font-family|cormorant", "fontSize": "clamp(40px, 6vw, 70px)", "fontWeight": "400"}}
     },
     "blocks": {
-      "core/navigation": {"typography": {"fontFamily": "var:preset|font-family|montserrat-alternates", "fontSize": "12px", "fontWeight": "400"}}
+      "core/navigation": {"typography": {"fontFamily": "var:preset|font-family|montserrat-alternates", "fontSize": "var:preset|font-size|base", "fontWeight": "400"}}
     }
   },
   "templateParts": [

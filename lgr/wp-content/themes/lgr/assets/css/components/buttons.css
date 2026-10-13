@@ -1,0 +1,82 @@
+/* Gutenberg applies the style class to the wrapper, not the link. */
+.wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun),
+.btn-ripple {
+  --ripple-fill: #1E1E1E;
+  --ripple-text: #E9DECE;
+}
+.wp-block-button.is-style-ripple-rose { --ripple-fill: #D95853; --ripple-text: #1E1E1E; }
+.wp-block-button.is-style-ripple-vert { --ripple-fill: #AEC1A6; --ripple-text: #1E1E1E; }
+.wp-block-button.is-style-ripple-brun { --ripple-fill: #B57244; --ripple-text: #1E1E1E; }
+
+/* Native outline colors remain editable; only the interaction changes them. */
+@media (hover: hover) and (pointer: fine) {
+  .wp-block-button.lgr-product-button > .wp-block-button__link:hover {
+    color: var(--ripple-text) !important;
+    border-color: var(--ripple-fill) !important;
+  }
+}
+.wp-block-button.lgr-product-button > .wp-block-button__link:focus-visible {
+  color: var(--ripple-text) !important;
+  background: var(--ripple-fill) !important;
+  border-color: var(--ripple-fill) !important;
+}
+
+.wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link,
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  border: 1px solid #1E1E1E;
+  border-radius: 4px;
+  background: #E9DECE;
+  color: #1E1E1E;
+  font-size: var(--wp--preset--font-size--base, 20px);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 420ms ease, border-color 420ms ease;
+}
+
+.wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link::before,
+.btn-ripple::before {
+  content: '';
+  position: absolute;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  width: var(--ripple-size, 250%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--ripple-fill);
+  transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 1250ms cubic-bezier(.19, 1, .22, 1);
+}
+
+@media (min-width: 600px) and (hover: hover) and (pointer: fine) {
+  .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link:hover,
+  .btn-ripple:hover {
+    color: var(--ripple-text);
+    border-color: var(--ripple-fill);
+    transition-delay: 320ms, 0ms;
+  }
+  .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link:hover::before,
+  .btn-ripple:hover::before { transform: translate(-50%, -50%) scale(1); }
+}
+
+.wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link:focus-visible,
+.btn-ripple:focus-visible {
+  color: var(--ripple-text);
+  background: var(--ripple-fill);
+  border-color: var(--ripple-fill);
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link,
+  .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link::before,
+  .btn-ripple, .btn-ripple::before { transition: none; }
+}

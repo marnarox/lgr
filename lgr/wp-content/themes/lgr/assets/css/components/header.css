@@ -1,0 +1,28 @@
+/* Mobile first header: margins follow the responsive hero grid. */
+.wp-site-blocks { --lgr-header-height: 86px; padding-top: var(--lgr-header-height); }
+.site-header { position: fixed; inset: 0 0 auto; z-index: 1000; padding: 21px 16px 0; }
+.header-inner { width: 100%; max-width: 100%; margin-inline: auto; justify-content: space-between; padding-inline: 12px !important; gap: 16px !important; }
+.header-inner.has-background {
+  position: relative; isolation: isolate; background: transparent !important;
+  border: .5px solid var(--lgr-color-charcoal); border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0,0,0,.1);
+}
+.header-inner.has-background::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: rgba(233,222,206,.47); pointer-events: none;
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.header-inner .brand { display: flex; flex: 0 0 60px; line-height: 0; margin: 0; }
+.header-inner .brand > a { display: block; line-height: 0; }
+.header-inner .brand img { display: block; width: 60px; height: auto; }
+@media (min-width: 600px) {
+  .site-header { padding: 28px 24px 0; }
+  .header-inner { padding-inline: 40px !important; }
+  .header-inner .brand { flex-basis: 100px; }
+  .header-inner .brand img { width: 100px; }
+}
+@media (min-width: 992px) {
+  .wp-site-blocks { --lgr-header-height: 100px; }
+  .header-inner { width: max-content; gap: 40px !important; }
+}
+@media (min-width: 1280px) { .site-header { padding-inline: 20px; } }

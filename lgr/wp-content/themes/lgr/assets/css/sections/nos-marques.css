@@ -1,0 +1,11 @@
+/* Editable native grid; align cards along the common bottom edge. */
+.lgr-brands-content { box-sizing: border-box; max-width: 1920px; margin-inline: auto; }
+.lgr-brands-grid { align-items: end; }
+.lgr-brand-card { display: grid; grid-template-rows: subgrid; }
+.lgr-brand-card > .block-editor-inner-blocks,
+.lgr-brand-card > .block-editor-inner-blocks > .block-editor-block-list__layout { display: contents; }
+.lgr-brand-card .wp-block-image { align-self: end; }
+.lgr-brand-card > .wp-block-group { align-self: start; }
+.lgr-brands-grid .lgr-brand-card > .wp-block-image { margin: 0; }
+.lgr-brands-grid .lgr-brand-card > .wp-block-group { margin-top: 0; }
+.lgr-brand-mark { width: 16px; height: 16px; min-width: 16px; flex: 0 0 16px; }

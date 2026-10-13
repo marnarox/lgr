@@ -1,0 +1,30 @@
+/* Reuse the home grid and curtains; native block colors set the two panels. */
+.lgr-hero--confitures {
+  --lgr-marquee-height: 0px;
+  background-image: none;
+}
+.lgr-hero--confitures .hero-title { text-transform: none; }
+.lgr-hero--confitures .hero-description { margin-bottom: 0; }
+.lgr-hero--confitures .hero-photo > .wp-block-image {
+  width: 100%; height: 100%; margin: 0;
+}
+.lgr-hero--confitures .hero-photo img { object-fit: contain; }
+.editor-styles-wrapper .lgr-hero--confitures .hero-photo > .block-editor-inner-blocks,
+.editor-styles-wrapper .lgr-hero--confitures .hero-photo > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  height: 100%; width: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .lgr-hero--confitures.hero-motion-running .hero-description {
+    animation: lgr-hero-content-enter 800ms cubic-bezier(.22, 1, .36, 1) 710ms both;
+  }
+}
+.editor-styles-wrapper .lgr-hero--confitures .hero-description { animation: none; }
+@media (min-width: 600px) and (max-width: 1279px) {
+  .lgr-hero--confitures { --hero-copy-height: 70%; }
+}
+@media (min-width: 1280px) {
+  .lgr-hero--confitures .hero-copy > *,
+  .editor-styles-wrapper .lgr-hero--confitures .hero-copy > .block-editor-inner-blocks > .block-editor-block-list__layout > * {
+    grid-column: 1 / span 7;
+  }
+}
