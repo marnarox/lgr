@@ -155,8 +155,12 @@ titres, descriptions, liens, pastilles, couleurs et espacements sont éditables.
 La grille native comporte trois colonnes desktop/tablette et une sur mobile.
 Les cartes occupent deux lignes partagées pour aligner le bas des images ;
 le CSS subgrid complète cette disposition dans le site et l'éditeur.
-Les fonds colorés derrière les pots sont inclus dans les PNG fournis : changer
-leur couleur demande de remplacer le PNG depuis Gutenberg.
+Les pots utilisent maintenant des AVIF transparents. Dans la Vue en liste,
+« Visuel de marque — fond et pot » contient une Image et un Groupe nommé
+« Fond de marque — couleur modifiable ». La photo et la couleur du fond se
+changent indépendamment dans Gutenberg. Les rectangles sont alignés par le bas
+et s'agrandissent une fois au scroll, avec 120 ms de décalage entre les marques.
+L'animation est désactivée dans le FSE et en réduction des mouvements.
 La composition « Nos marques LGR » permet de réutiliser la section.
 # Catalogues de produits
 

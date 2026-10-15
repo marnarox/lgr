@@ -1,0 +1,6 @@
+/* Stretch native cards to the tallest column without fixing their height. */
+.lgr-atouts .wp-block-column { display: flex; flex-direction: column; }
+.lgr-atouts .wp-block-column > .wp-block-group { flex: 1; }
+.editor-styles-wrapper .lgr-atouts .wp-block-column > .block-editor-inner-blocks,
+.editor-styles-wrapper .lgr-atouts .wp-block-column > .block-editor-inner-blocks > .block-editor-block-list__layout { display: flex; flex-direction: column; flex: 1; }
+.editor-styles-wrapper .lgr-atouts .wp-block-column > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block-group { flex: 1; }

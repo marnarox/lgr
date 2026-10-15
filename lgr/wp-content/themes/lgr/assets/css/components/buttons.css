@@ -6,7 +6,7 @@
 }
 .wp-block-button.is-style-ripple-rose { --ripple-fill: #D95853; --ripple-text: #1E1E1E; }
 .wp-block-button.is-style-ripple-vert { --ripple-fill: #AEC1A6; --ripple-text: #1E1E1E; }
-.wp-block-button.is-style-ripple-brun { --ripple-fill: #B57244; --ripple-text: #1E1E1E; }
+.wp-block-button.is-style-ripple-brun { --ripple-fill: #FBC14A; --ripple-text: #1E1E1E; }
 
 /* Native outline colors remain editable; only the interaction changes them. */
 @media (hover: hover) and (pointer: fine) {

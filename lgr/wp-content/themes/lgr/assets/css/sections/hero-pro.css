@@ -1,0 +1,12 @@
+/* Native block colors and background image remain editable in the FSE. */
+.lgr-hero--pro { --lgr-marquee-height: 0px; }
+.lgr-hero--pro .hero-copy { color: inherit; }
+.lgr-hero--pro .hero-actions { margin-top: 60px; }
+@media (min-width: 1280px) {
+  .lgr-hero--pro .hero-copy { padding-top: clamp(124px, 27.3vh, 193px); }
+  .lgr-hero--pro .hero-copy > *,
+  .editor-styles-wrapper .lgr-hero--pro .hero-copy > .block-editor-inner-blocks > .block-editor-block-list__layout > * { grid-column: 1 / span 7; }
+}
+@media (max-width: 1279px) {
+  .lgr-hero--pro .hero-actions { margin-top: 24px; }
+}

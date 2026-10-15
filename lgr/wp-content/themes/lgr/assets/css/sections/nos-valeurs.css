@@ -4,4 +4,41 @@
   max-width: 1920px;
   margin-inline: auto;
 }
-.lgr-values-grid { align-items: start; }
+.lgr-values-grid { --lgr-values-column-min: 100%; align-items: start; }
+@media (min-width: 981px) {
+  .lgr-values-grid { --lgr-values-column-min: calc((100% - 20px) / 2); }
+}
+@media (min-width: 1281px) {
+  .lgr-values-grid { --lgr-values-column-min: calc((100% - 60px) / 4); }
+}
+@media (max-width: 980px) {
+  .lgr-value-card { width: min(85%, 360px); }
+  .lgr-value-card:nth-child(odd) { justify-self: start; }
+  .lgr-value-card:nth-child(even) { justify-self: end; }
+}
+.lgr-value-card {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 0;
+  transition: scale 500ms cubic-bezier(.19, 1, .22, 1), rotate 500ms ease;
+}
+.lgr-value-card > .wp-block-image { margin: 0; }
+.lgr-value-card > .wp-block-group { width: 100%; }
+.lgr-value-card .wp-block-image img { display: block; }
+@media (hover: hover) and (pointer: fine) {
+  .lgr-value-card:hover { scale: 1.05; rotate: -2deg; z-index: 5; }
+}
+.lgr-value-card:focus-within { scale: 1.05; rotate: -2deg; z-index: 5; }
+.editor-styles-wrapper .lgr-value-card > .block-editor-inner-blocks { width: 100%; }
+.editor-styles-wrapper .lgr-value-card > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: flex; flex-direction: column; align-items: center;
+}
+.editor-styles-wrapper .lgr-value-card { scale: 1; rotate: 0deg; }
+@media (prefers-reduced-motion: reduce) {
+  .lgr-value-card { transition: none; }
+  .lgr-value-card:hover, .lgr-value-card:focus-within { scale: 1; rotate: 0deg; }
+}

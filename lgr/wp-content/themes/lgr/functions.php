@@ -9,7 +9,7 @@ add_action('after_setup_theme', function () {
 
 add_action('enqueue_block_assets', function () {
     wp_enqueue_style('lgr-fonts', content_url('/fonts/fonts.css'), array(), '1.0');
-    wp_enqueue_style('lgr-colors', content_url('/design-tokens/colors.css'), array(), '1.0');
+    wp_enqueue_style('lgr-colors', content_url('/design-tokens/colors.css'), array(), (string) filemtime(WP_CONTENT_DIR . '/design-tokens/colors.css'));
     $styles = array(
         'base' => 'assets/css/base.css',
         'layout' => 'assets/css/layout.css',
@@ -24,6 +24,9 @@ add_action('enqueue_block_assets', function () {
         'nos-valeurs' => 'assets/css/sections/nos-valeurs.css',
         'nos-marques' => 'assets/css/sections/nos-marques.css',
         'hero-confitures' => 'assets/css/sections/hero-confitures.css',
+        'hero-pro' => 'assets/css/sections/hero-pro.css',
+        'nos-atouts' => 'assets/css/sections/nos-atouts.css',
+        'contact-pro' => 'assets/css/sections/contact-pro.css',
         'confitures' => 'assets/css/sections/confitures.css',
         'catalogue' => 'assets/css/components/catalogue.css',
         'section-motion' => 'assets/css/components/section-motion.css',
@@ -60,6 +63,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('lgr-section-motion', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
     $path = 'assets/js/catalogue.js';
     wp_enqueue_script('lgr-catalogue', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
+    $path = 'assets/js/brand-backgrounds.js';
+    wp_enqueue_script('lgr-brand-backgrounds', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
     $path = 'assets/js/hero.js';
     wp_enqueue_script('lgr-hero', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
 });

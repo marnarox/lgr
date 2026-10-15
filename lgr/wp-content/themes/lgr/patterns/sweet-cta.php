@@ -1,0 +1,31 @@
+<?php
+/**
+ * Title: Et pour le sucré ?
+ * Slug: lgr/sweet-cta
+ * Categories: featured
+ * Description: Renvoi éditable vers les confitures.
+ */
+?>
+<!-- wp:group {"tagName":"section","backgroundColor":"cream","textColor":"charcoal","align":"full","anchor":"decouvrir-les-confitures","className":"lgr-sweet-cta","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|section-block","bottom":"var:preset|spacing|section-block"}}},"layout":{"type":"default"},"metadata":{"name":"Et pour le sucré ?"}} -->
+<section class="wp-block-group alignfull lgr-sweet-cta has-charcoal-color has-cream-background-color has-text-color has-background" id="decouvrir-les-confitures" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--section-block);padding-bottom:var(--wp--preset--spacing--section-block)"><!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|section-gutter","right":"var:preset|spacing|section-gutter"},"blockGap":"32px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--section-gutter);padding-left:var(--wp--preset--spacing--section-gutter)"><!-- wp:group {"style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:group {"backgroundColor":"coral","style":{"border":{"radius":"50%"},"dimensions":{"minHeight":"20px"},"layout":{"selfStretch":"fixed","flexSize":"20px"}},"layout":{"type":"default"},"metadata":{"name":"Pastille LGR"}} -->
+<div class="wp-block-group has-coral-background-color has-background" style="border-radius:50%;min-height:20px"></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"fontFamily":"montserrat-alternates","style":{"typography":{"fontSize":"20px","fontWeight":"700","lineHeight":"1.2"}}} -->
+<p class="has-montserrat-alternates-font-family" style="font-size:20px;font-weight:700;line-height:1.2">Le goût retrouvé</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"fontFamily":"cormorant","style":{"typography":{"fontSize":"clamp(52px, 7.14vw, 137px)","fontWeight":"400","lineHeight":"1.1"}}} -->
+<h2 class="wp-block-heading has-cormorant-font-family" style="font-size:clamp(52px, 7.14vw, 137px);font-weight:400;line-height:1.1">Et pour le sucré ?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"charcoal","textColor":"cream","fontFamily":"montserrat-alternates","className":"is-style-ripple-rose lgr-product-button","style":{"border":{"radius":"4px"},"spacing":{"padding":{"top":"16px","bottom":"16px","left":"32px","right":"32px"}},"typography":{"fontSize":"20px","lineHeight":"1.2"}}} -->
+<div class="wp-block-button is-style-ripple-rose lgr-product-button"><a class="wp-block-button__link has-cream-color has-charcoal-background-color has-text-color has-background has-montserrat-alternates-font-family has-custom-font-size wp-element-button" href="/confitures/" style="border-radius:4px;padding-top:16px;padding-right:32px;padding-bottom:16px;padding-left:32px;font-size:20px;line-height:1.2">Voir nos confitures</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->

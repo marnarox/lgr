@@ -33,7 +33,7 @@ et le theme actif localement ; le footer Figma 308:5055 est maintenant realise.
 | --lgr-color-cream    | #E9DECE |
 | --lgr-color-coral    | #D95853 |
 | --lgr-color-sage     | #AEC1A6 |
-| --lgr-color-terra    | #B57244 |
+| --lgr-color-terra    | #FBC14A |
 
 Variables dans `wp-content/design-tokens/colors.css`, chargees par le theme LGR.
 Le header utilise le fond creme et le texte anthracite. La repartition dans les

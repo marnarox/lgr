@@ -13,6 +13,7 @@
   width: min(var(--wp--style--global--content-size, 1920px), calc(100% - 40px));
   margin: 64px auto;
 }
+.site-content.lgr-legal-main { width: 100%; }
 .site-content section {
   scroll-margin-top: calc(var(--lgr-header-height, 100px) + 24px);
 }
