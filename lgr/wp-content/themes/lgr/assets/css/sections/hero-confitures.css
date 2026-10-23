@@ -1,27 +1,37 @@
-/* Reuse the home grid and curtains; native block colors set the two panels. */
+/*
+ * Heroes catalogue — Confitures et AVS
+ * Étend hero.css. Couleurs, textes, photo et padding du panneau image sont enregistrés dans les blocs natifs.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Variante catalogue : sans marquee ni texture de fond de l’accueil. */
 :is(.lgr-hero--confitures, .lgr-hero--avs) {
   --lgr-marquee-height: 0px;
   background-image: none;
 }
+/* 02. Textes : casse du titre et marge de la description. */
 :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-title { text-transform: none; }
 :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-description { margin-bottom: 0; }
+/* 03. Le bloc Image remplit son panneau ; le mode de cadrage se règle dans Gutenberg. */
 :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-photo > .wp-block-image {
   width: 100%; height: 100%; margin: 0;
 }
-:is(.lgr-hero--confitures, .lgr-hero--avs) .hero-photo img { object-fit: contain; }
+/* 04. Gutenberg : transmettre la hauteur du panneau aux wrappers de l’image. */
 .editor-styles-wrapper :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-photo > .block-editor-inner-blocks,
 .editor-styles-wrapper :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-photo > .block-editor-inner-blocks > .block-editor-block-list__layout {
   height: 100%; width: 100%;
 }
+/* 05. Description : l’intégrer à la cascade d’entrée de la hero. */
 @media (prefers-reduced-motion: no-preference) {
   :is(.lgr-hero--confitures, .lgr-hero--avs).hero-motion-running .hero-description {
     animation: lgr-hero-content-enter 800ms cubic-bezier(.22, 1, .36, 1) 710ms both;
   }
 }
 .editor-styles-wrapper :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-description { animation: none; }
+/* 06. Tablette : réserver davantage de hauteur au texte. */
 @media (min-width: 600px) and (max-width: 1279px) {
   :is(.lgr-hero--confitures, .lgr-hero--avs) { --hero-copy-height: 70%; }
 }
+/* 07. Desktop : étendre le texte sur sept colonnes. */
 @media (min-width: 1280px) {
   :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-copy > *,
   .editor-styles-wrapper :is(.lgr-hero--confitures, .lgr-hero--avs) .hero-copy > .block-editor-inner-blocks > .block-editor-block-list__layout > * {

@@ -1,5 +1,11 @@
+/*
+ * Bandeau défilant des marques — accueil
+ * brand-marquee.js produit deux groupes identiques pour la boucle ; la hauteur est fournie par la hero.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Enveloppe pleine largeur et palette du bandeau. */
 .lgr-brand-marquee {
-  --brand-mustard: #FBC14A;
+  --brand-mustard: #fbc14a;
   width: 100%;
   max-width: none !important;
   height: var(--lgr-marquee-height, 28px);
@@ -8,6 +14,7 @@
   background: var(--lgr-color-charcoal, #1e1e1e);
   color: var(--lgr-color-cream, #e9dece);
 }
+/* 02. Piste animée et groupes répétés. */
 .brand-marquee-track {
   display: flex;
   width: max-content;
@@ -23,6 +30,7 @@
   gap: 16px;
   padding-right: 16px;
 }
+/* 03. Éléments : noms de marques et pastilles de couleur. */
 .brand-marquee-item {
   display: inline-flex;
   align-items: center;
@@ -49,11 +57,15 @@
 .brand-marquee-dot--saveurs {
   background: var(--brand-mustard);
 }
+/* 04. Boucle : -50% correspond exactement au premier des deux groupes identiques.
+ * Chaque groupe couvre au moins un écran, y compris sur un moniteur 4K.
+ */
 @keyframes lgr-brand-scroll {
   to {
     transform: translateX(-50%);
   }
 }
+/* 05. Tablette : agrandir les textes, les pastilles et les espacements. */
 @media (min-width: 600px) {
   .brand-marquee-item {
     font-size: 32px;
@@ -68,11 +80,13 @@
     padding-right: 32px;
   }
 }
+/* 06. Desktop : ajustement de l’écart pastille / texte. */
 @media (min-width: 1280px) {
   .brand-marquee-item {
     gap: 8px;
   }
 }
+/* 07. Accessibilité : bandeau statique, retours à la ligne et suppression des doublons. */
 @media (prefers-reduced-motion: reduce) {
   .lgr-brand-marquee {
     height: auto;

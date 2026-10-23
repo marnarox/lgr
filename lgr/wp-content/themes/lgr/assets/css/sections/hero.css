@@ -1,8 +1,14 @@
-/* Shared frontend/editor layout. Mobile first: 5 columns, 16 px margins/gutters. */
+/*
+ * Heroes — structure et animation partagées
+ * Base mobile de l’accueil, étendue par hero-confitures.css (Confitures / AVS) et hero-pro.css. hero.js pilote hero-motion-running / done.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Hauteur du bandeau et conteneur de page : base mobile commune au site et au FSE. */
 .wp-site-blocks,
 .editor-styles-wrapper {
   --lgr-marquee-height: 28px;
 }
+/* 02. Pages avec hero : supprimer le décalage standard du header et autoriser les fonds pleine largeur. */
 body:has(.lgr-hero) {
   overflow-x: clip;
 }
@@ -16,6 +22,7 @@ body:has(.lgr-hero) .site-content {
 body:has(.lgr-hero) .site-content > .wp-block-post-content {
   max-width: none;
 }
+/* 03. Enveloppe mobile : grille de 5 colonnes, fond texturé et répartition texte / photo. */
 .lgr-hero {
   --hero-margin: 16px;
   --hero-columns: 5;
@@ -30,17 +37,19 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
   width: 100%;
   max-width: none !important;
   height: calc(100vh - var(--lgr-marquee-height, 28px));
-  min-height: 540px;
+  /* Garder le contenu centré sous le menu, même sur un écran peu haut. */
+  min-height: 640px;
   margin: 0 !important;
   padding: 0;
   background: var(--lgr-color-coral) url('../../images/rose-bruit.avif')
     center / cover no-repeat;
 }
+/* 04. Panneau texte : contenu centré, limité à 1920 px. */
 .lgr-hero .hero-copy {
   display: grid;
   grid-template-columns: repeat(var(--hero-columns), minmax(0, 1fr));
   column-gap: var(--hero-gutter);
-  align-content: start;
+  align-content: center;
   position: relative;
   z-index: 1;
   box-sizing: border-box;
@@ -48,12 +57,13 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
   width: 100%;
   max-width: var(--hero-content-max);
   margin: 0 auto;
-  padding: 98px var(--hero-margin) 24px;
+  padding: 24px var(--hero-margin);
   color: var(--lgr-color-cream);
 }
 .lgr-hero .hero-copy > * {
   grid-column: 1 / -1;
 }
+/* 05. Textes : surtitre et H1. */
 .lgr-hero .hero-tagline {
   margin: 0 0 12px;
   font-family: 'Montserrat Alternates', sans-serif;
@@ -70,6 +80,7 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
   text-transform: uppercase;
   overflow-wrap: normal;
 }
+/* 06. Actions : disposition des boutons et variante secondaire. */
 .lgr-hero .hero-actions {
   display: flex;
   flex-direction: column;
@@ -93,6 +104,7 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
   background: var(--lgr-color-charcoal);
   border-color: var(--lgr-color-charcoal);
 }
+/* 07. Visuels : photo horizontale sur petits écrans, portrait sur desktop. */
 .lgr-hero .hero-photo {
   position: absolute;
   inset: var(--hero-copy-height) 0 0;
@@ -111,6 +123,7 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
   object-fit: cover;
   object-position: center;
 }
+/* 08. Interactions : contraste du bouton secondaire au focus et au survol. */
 .lgr-hero .hero-button-secondary .wp-block-button__link:focus-visible {
   color: var(--ripple-text);
   background: var(--ripple-fill);
@@ -120,7 +133,8 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     color: var(--ripple-text);
   }
 }
-/* Tablet: 9 columns, 24 px margins, 16 px gutters. */
+
+/* 09. Tablette : grille de 9 colonnes et marges de 24 px. */
 @media (min-width: 600px) {
   .wp-site-blocks,
   .editor-styles-wrapper {
@@ -130,9 +144,6 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     --hero-margin: 24px;
     --hero-columns: 9;
     --hero-copy-height: 58.3%;
-  }
-  .lgr-hero .hero-copy {
-    padding-top: clamp(124px, 17.4vh, 197px);
   }
   .lgr-hero .hero-tagline {
     font-size: 20px;
@@ -152,9 +163,10 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     padding: 16px 32px;
   }
 }
+/* 10. Tablette de faible hauteur : réduire les titres et les espacements. */
 @media (min-width: 600px) and (max-width: 1279px) and (max-height: 950px) {
   .lgr-hero {
-    min-height: 700px;
+    min-height: 820px;
   }
   .lgr-hero .hero-tagline {
     margin-bottom: 20px;
@@ -167,7 +179,8 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     margin-top: 24px;
   }
 }
-/* Desktop: 12 columns, 100 px margins at 1280 px, 20 px gutters. */
+
+/* 11. Desktop : grille de 12 colonnes et panneaux côte à côte. */
 @media (min-width: 1280px) {
   .wp-site-blocks,
   .editor-styles-wrapper {
@@ -178,9 +191,6 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     --hero-columns: 12;
     --hero-gutter: 20px;
     --hero-copy-height: 100%;
-  }
-  .lgr-hero .hero-copy {
-    padding-top: clamp(124px, calc((100vh - 60px) * 0.249), 193px);
   }
   .lgr-hero .hero-copy > * {
     grid-column: 1 / span 6;
@@ -204,21 +214,21 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     display: block;
   }
 }
+/* 12. Très grands écrans : figer le titre et prolonger le visuel au-delà du contenu centré. */
 @media (min-width: 1920px) {
-  /* Anchor the photo to the capped grid, while extending it to the right edge. */
+  /* Ancrer la photo à la grille plafonnée tout en la prolongeant jusqu’au bord droit. */
   .lgr-hero {
     --hero-photo-start: calc(50% + 256.512px);
-  }
-  .lgr-hero .hero-copy {
-    padding-top: 260px;
   }
   .lgr-hero .hero-title {
     font-size: 137px;
   }
 }
+/* 13. Dès 2020 px : retirer les marges horizontales de la grille plafonnée. */
 @media (min-width: 2020px) {
   .lgr-hero { --hero-margin: 0px; }
 }
+/* 14. Animations : rideaux horizontaux, rideaux verticaux et entrée des contenus. */
 @keyframes lgr-hero-uncover-horizontal {
   from {
     transform: scaleX(1);
@@ -245,6 +255,7 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     transform: translateY(0);
   }
 }
+/* 15. Rideaux mobiles / tablette : construction des calques, origines et délais de cascade. */
 @media (prefers-reduced-motion: no-preference) {
   body:has(.lgr-hero) .lgr-hero::before,
   body:has(.lgr-hero) .lgr-hero .hero-photo::before {
@@ -302,6 +313,7 @@ body:has(.lgr-hero) .site-content > .wp-block-post-content {
     animation: none;
   }
 }
+/* 16. Rideaux desktop : changer le sens d’ouverture et libérer immédiatement le contenu au focus. */
 @media (min-width: 1280px) and (prefers-reduced-motion: no-preference) {
   body:has(.lgr-hero) .lgr-hero::before {
     inset: 0 calc(100% - var(--hero-photo-start)) 0 0;

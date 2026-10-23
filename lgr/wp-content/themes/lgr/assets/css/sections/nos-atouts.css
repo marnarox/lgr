@@ -1,6 +1,12 @@
-/* Stretch native cards to the tallest column without fixing their height. */
+/*
+ * Nos atouts — Espace pro
+ * Les couleurs et la hauteur minimale sont natives. Le flex permet aux cartes de suivre la plus haute de leur rangée.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Site public : étirer chaque carte dans sa colonne native. */
 .lgr-atouts .wp-block-column { display: flex; flex-direction: column; }
 .lgr-atouts .wp-block-column > .wp-block-group { flex: 1; }
+/* 02. Gutenberg : transmettre cet étirement aux wrappers imbriqués. */
 .editor-styles-wrapper .lgr-atouts .wp-block-column > .block-editor-inner-blocks,
 .editor-styles-wrapper .lgr-atouts .wp-block-column > .block-editor-inner-blocks > .block-editor-block-list__layout { display: flex; flex-direction: column; flex: 1; }
 .editor-styles-wrapper .lgr-atouts .wp-block-column > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block-group { flex: 1; }

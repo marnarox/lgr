@@ -1,0 +1,386 @@
+[
+    {
+        "section": "le-gout-retrouvé",
+        "name": "4 fruits — 300 g",
+        "ingredients": "Plus de 70 % de fruits rouges (fruits des bois), sucre, pectine, jus de citron.",
+        "suggestion": "À tartiner au petit-déjeuner ou à utiliser pour garnir un gâteau."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Abricot — 300 g",
+        "ingredients": "Plus de 70 % d'abricots, sucre, pectine, jus de citron.",
+        "suggestion": "À étaler sur une brioche ou à utiliser pour accompagner une tarte aux fruits."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Cerise — 300 g",
+        "ingredients": "Plus de 70 % de cerises, sucre, pectine, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à proposer avec un fromage."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Clémentines corses — 300 g",
+        "ingredients": "Plus de 70 % de clémentines, sucre, pectine, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à associer à un yaourt nature."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Fraise — 300 g",
+        "ingredients": "Plus de 70 % de fraises, sucre, pectine, jus de citron.",
+        "suggestion": "À étaler sur une brioche ou à glisser dans un biscuit roulé."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Fraise-Rhubarbe — 300 g",
+        "ingredients": "Plus de 70 % de fruits (fraises, rhubarbe), sucre, pectine, jus de citron.",
+        "suggestion": "À savourer sur du pain de campagne ou à associer à un fromage blanc."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Fraises-Mûre-Violette — 300 g",
+        "ingredients": "Plus de 70 % de fruits (fraises, mûres), chiques à la violette, sucre, pectine, jus de citron.",
+        "suggestion": "À découvrir sur une brioche ou à utiliser pour accompagner un dessert à la vanille."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Framboise — 300 g",
+        "ingredients": "Plus de 70 % de framboises, sucre, pectine, jus de citron.",
+        "suggestion": "À tartiner au petit-déjeuner ou à utiliser pour garnir des sablés."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Fruit de la passion — 300 g",
+        "ingredients": "Plus de 70 % de fruits (pommes, fruits de la passion, purée de fruit de la passion), sucre, pectine, jus de citron.",
+        "suggestion": "À déposer sur un fromage blanc ou à servir avec un dessert à la noix de coco."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Kiwi — 300 g",
+        "ingredients": "Plus de 70 % de kiwis, sucre, pectine, jus de pomme.",
+        "suggestion": "À déposer sur un yaourt nature ou à savourer sur une tartine."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Myrtille — 300 g",
+        "ingredients": "Plus de 70 % de myrtilles, sucre, pectine, jus de citron.",
+        "suggestion": "À servir avec des crêpes ou à déposer sur un fromage blanc."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Noël — 300 g",
+        "ingredients": "Plus de 70 % de fruits (oranges, pommes, raisins secs, cranberries), sucre, cannelle, pectine, jus de citron.",
+        "suggestion": "À proposer sur du pain grillé ou avec une tranche de pain d’épices."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Orange-Cannelle — 300 g",
+        "ingredients": "Plus de 70 % d'oranges, sucre, cannelle, jus de citron.",
+        "suggestion": "À déguster sur du pain grillé ou à servir avec un gâteau nature."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Poire-Gingembre — 300 g",
+        "ingredients": "Plus de 70 % de poires, gingembre, sucre, pectine, jus de citron.",
+        "suggestion": "À déguster sur une tartine ou à associer à un fromage."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Poire-Kiwi — 300 g",
+        "ingredients": "Plus de 70 % de fruits (poires, kiwis), sucre, pectine, jus de citron.",
+        "suggestion": "À savourer avec un yaourt nature ou sur une tranche de brioche."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Poire pirate — 300 g",
+        "ingredients": "Plus de 70 % de poires, gousse de vanille, sucre, rhum Negrita, pectine, jus de citron.",
+        "suggestion": "À servir avec une crêpe ou à associer à un dessert au chocolat."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Pomme-caramel beurre salé — 300 g",
+        "ingredients": "Plus de 70 % de pommes, beurre doux, sucre, caramel, pectine, crème fraîche, jus de citron.",
+        "suggestion": "À servir avec des crêpes ou à glisser dans un dessert aux pommes."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Prune président — 300 g",
+        "ingredients": "Plus de 70 % de prunes bio, sucre, pectine, jus de citron.",
+        "suggestion": "À déguster sur une tartine ou à utiliser pour garnir une tarte."
+    },
+    {
+        "section": "le-gout-retrouvé",
+        "name": "Rhubarbe — 300 g",
+        "ingredients": "Plus de 70 % de rhubarbe, sucre, pectine, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à associer à un yaourt nature."
+    },
+    {
+        "section": "celinette",
+        "name": "Abricot — 300 g",
+        "ingredients": "Plus de 70 % d'abricots, sucre, jus de citron.",
+        "suggestion": "À déguster sur une brioche ou à servir avec des crêpes."
+    },
+    {
+        "section": "celinette",
+        "name": "Cerise — 300 g",
+        "ingredients": "Plus de 70 % de cerises, sucre, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à glisser dans un dessert au chocolat."
+    },
+    {
+        "section": "celinette",
+        "name": "Figue — 300 g",
+        "ingredients": "Plus de 70 % de figues, sucre, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à proposer avec un fromage affiné."
+    },
+    {
+        "section": "celinette",
+        "name": "Fraise — 300 g",
+        "ingredients": "Plus de 70 % de fraises, sucre, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à utiliser pour garnir un biscuit roulé."
+    },
+    {
+        "section": "celinette",
+        "name": "Myrtille — 300 g",
+        "ingredients": "Plus de 70 % de myrtilles, sucre, jus de citron.",
+        "suggestion": "À servir avec des pancakes ou à déposer sur un fromage blanc."
+    },
+    {
+        "section": "celinette",
+        "name": "Orange douce — 300 g",
+        "ingredients": "Plus de 70 % d'oranges, sucre, jus de citron.",
+        "suggestion": "À étaler sur du pain grillé ou à servir avec un gâteau nature."
+    },
+    {
+        "section": "celinette",
+        "name": "Prune — 300 g",
+        "ingredients": "Plus de 70 % de prunes, sucre, jus de citron.",
+        "suggestion": "À déguster avec du pain de campagne ou à proposer avec un fromage blanc."
+    },
+    {
+        "section": "celinette",
+        "name": "Rhubarbe — 300 g",
+        "ingredients": "Plus de 70 % de rhubarbe, sucre, jus de citron.",
+        "suggestion": "À associer à un yaourt nature ou à utiliser pour garnir une tarte."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Clémentines corses — 145 g",
+        "ingredients": "Plus de 70 % de clémentines, sucre, pectine, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à associer à un yaourt nature."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Figue — 145 g",
+        "ingredients": "Plus de 70 % de figues, sucre, essence de vanille, jus de citron.",
+        "suggestion": "À savourer sur une tartine ou à proposer avec un fromage affiné."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Fraises-Mûre-Violette — 145 g",
+        "ingredients": "Plus de 70 % de fruits (fraises, mûres), chiques à la violette, sucre, pectine, jus de citron.",
+        "suggestion": "À découvrir sur une brioche ou à utiliser pour accompagner un dessert à la vanille."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Kiwi — 145 g",
+        "ingredients": "Plus de 70 % de kiwis, sucre, pectine, jus de pomme.",
+        "suggestion": "À déposer sur un yaourt nature ou à savourer sur une tartine."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Myrtille — 145 g",
+        "ingredients": "Plus de 70 % de myrtilles, sucre, pectine, jus de citron.",
+        "suggestion": "À servir avec des crêpes ou à déposer sur un fromage blanc."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Noël — 145 g",
+        "ingredients": "Plus de 70 % de fruits (oranges, pommes, raisins secs, cranberries), sucre, cannelle, pectine, jus de citron.",
+        "suggestion": "À proposer sur du pain grillé ou avec une tranche de pain d’épices."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Orange-Cannelle — 145 g",
+        "ingredients": "Plus de 70 % d'oranges, sucre, cannelle, jus de citron.",
+        "suggestion": "À déguster sur du pain grillé ou à servir avec un gâteau nature."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Poire-Gingembre — 145 g",
+        "ingredients": "Plus de 70 % de poires, gingembre, sucre, pectine, jus de citron.",
+        "suggestion": "À déguster sur une tartine ou à associer à un fromage."
+    },
+    {
+        "section": "le-gout-retrouve-145",
+        "name": "Pomme-caramel beurre salé — 145 g",
+        "ingredients": "Plus de 70 % de pommes, beurre doux, sucre, caramel, pectine, crème fraîche, jus de citron.",
+        "suggestion": "À servir avec des crêpes ou à glisser dans un dessert aux pommes."
+    },
+    {
+        "section": "moutardes",
+        "name": "À la bière",
+        "ingredients": "Graines de moutarde bio 70 %, bière, vinaigre, miel, ail, épices, blé.",
+        "suggestion": "Une alliée des planches de charcuterie, des saucisses grillées et des sauces pour les viandes."
+    },
+    {
+        "section": "moutardes",
+        "name": "À l’ail des ours",
+        "ingredients": "Graines de moutarde bio 70 %, eau, vinaigre, miel, ail, épices, ail des ours.",
+        "suggestion": "À servir avec des légumes rôtis ou à incorporer dans une sauce pour accompagner des pommes de terre."
+    },
+    {
+        "section": "moutardes",
+        "name": "À l’échalote",
+        "ingredients": "Graines de moutarde bio 70 %, eau, vinaigre, échalotes, miel, ail, épices.",
+        "suggestion": "À déguster avec une viande grillée ou à mélanger dans une vinaigrette maison."
+    },
+    {
+        "section": "moutardes",
+        "name": "À l’estragon",
+        "ingredients": "Graines de moutarde, eau, vinaigre, miel, huile de colza, ail, estragon, épices.",
+        "suggestion": "À essayer dans une sauce pour une volaille ou dans l’assaisonnement d’une salade de pommes de terre."
+    },
+    {
+        "section": "moutardes",
+        "name": "Miel & cognac",
+        "ingredients": "Graines de moutarde bio 70 %, eau, vinaigre, miel, cognac, ail, épices.",
+        "suggestion": "À servir avec une viande grillée ou à incorporer dans une sauce pour accompagner une volaille."
+    },
+    {
+        "section": "moutardes",
+        "name": "Miel & spéculoos",
+        "ingredients": "Graines de moutarde bio 70 %, eau, spéculoos, miel, ail, épices (blé).",
+        "suggestion": "À découvrir avec un fromage ou pour varier l’accompagnement d’une viande rôtie."
+    },
+    {
+        "section": "moutardes",
+        "name": "Oignons & fines herbes",
+        "ingredients": "Graines de moutarde bio 70 %, eau, vinaigre, miel, oignons, fines herbes, épices, ail.",
+        "suggestion": "À glisser dans un sandwich ou à déguster avec des pommes de terre rôties."
+    },
+    {
+        "section": "moutardes",
+        "name": "Au pain d’épices",
+        "ingredients": "Graines de moutarde bio 70 %, eau, vinaigre, miel, ail, épices (blé), pain d’épices.",
+        "suggestion": "À proposer avec une terrine ou à incorporer dans une sauce pour un rôti."
+    },
+    {
+        "section": "moutardes",
+        "name": "Au sirop de Liège",
+        "ingredients": "Graines de moutarde bio 70 %, eau, vinaigre, miel, ail, épices, sirop artisanal Delvaux.",
+        "suggestion": "À associer à un fromage affiné ou à utiliser pour accompagner un rôti de porc."
+    },
+    {
+        "section": "moutardes",
+        "name": "Aux tomates séchées",
+        "ingredients": "Graines de moutarde bio locales, eau, vinaigre, miel, ail, épices, tomates séchées.",
+        "suggestion": "À tartiner dans un sandwich ou à servir avec des légumes grillés."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade aux deux olives",
+        "ingredients": "Olives, huile d’olive, câpres, ail, citron, épices, sel de mer.",
+        "suggestion": "À partager sur des toasts ou à utiliser pour garnir une tarte aux légumes."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade à l’ail rose",
+        "ingredients": "Huiles végétales (tournesol, olive), ail, épices, sel de mer, olives, câpres, citrons.",
+        "suggestion": "À tartiner sur du pain grillé ou à servir avec des légumes à partager à l’apéritif."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade d’artichauts",
+        "ingredients": "Cœurs d’artichaut, huile d’olive, ail, olives, jus de citron, sel et poivre, tomate confite.",
+        "suggestion": "À proposer avec du pain de campagne ou à glisser dans un sandwich aux légumes."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade olives & ail des ours",
+        "ingredients": "Olives, huile d’olive, ail des ours, câpres, ail, citron, épices, sel de mer.",
+        "suggestion": "À savourer sur une tranche de pain ou à associer à des pommes de terre rôties."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade olives & citron",
+        "ingredients": "Huiles végétales (tournesol, olive), ail, épices, sel de mer, olives, citron (jus, pulpe, zeste), câpres.",
+        "suggestion": "À déguster sur un toast ou à utiliser pour accompagner un poisson grillé."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade olives & basilic",
+        "ingredients": "Huile d’olive, ail, épices, sel de mer, câpres, citron, olives, basilic.",
+        "suggestion": "À tartiner sur du pain grillé ou à mélanger à des pâtes pour un repas tout simple."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade olives & sésame grillé",
+        "ingredients": "Olives, huile d’olive, sésame grillé, câpres, ail, citron, épices.",
+        "suggestion": "À servir avec des crudités ou à étaler dans un pain pita garni de légumes."
+    },
+    {
+        "section": "tartinades",
+        "name": "Tapenade aux tomates séchées",
+        "ingredients": "Olives, huiles végétales (tournesol, olive), tomates séchées, concentré de tomate, câpres, ail, citron, épices, sel de mer.",
+        "suggestion": "À tartiner à l’apéritif ou à mélanger à des pâtes pour un repas tout simple."
+    },
+    {
+        "section": "tartinades",
+        "name": "Caviar d’aubergines",
+        "ingredients": "Aubergine, tomates, oignons, huile d’olive, ail, épices (céleri).",
+        "suggestion": "À savourer sur du pain grillé ou à proposer avec un assortiment de légumes à l’apéritif."
+    },
+    {
+        "section": "tartinades",
+        "name": "Houmous épicé",
+        "ingredients": "Pois chiches, eau, huile d’olive, tahin (sésame), jus de citron, cumin, paprika, ail, épices.",
+        "suggestion": "À déguster avec des crudités ou à étaler dans un pain pita pour un repas sur le pouce."
+    },
+    {
+        "section": "tartinades",
+        "name": "Muhammara",
+        "ingredients": "Poivron, mélasse de grenade, piment fort, ail, chapelure de blé, cumin.",
+        "suggestion": "À partager avec du pain pita ou à servir avec des légumes grillés."
+    },
+    {
+        "section": "tartinades",
+        "name": "Poivronnade",
+        "ingredients": "Poivrons, oignons, ail, huile d’olive, épices (céleri).",
+        "suggestion": "À tartiner sur un toast ou à glisser dans un sandwich aux légumes."
+    },
+    {
+        "section": "vinaigrettes",
+        "name": "Au sirop de Liège",
+        "ingredients": "Huile de tournesol, vinaigre de cidre, sirop artisanal Delvaux, moutarde, épices.",
+        "suggestion": "Une touche douce et acidulée pour accompagner une salade de chèvre chaud ou des légumes rôtis."
+    },
+    {
+        "section": "vinaigrettes",
+        "name": "À l’ail des ours",
+        "ingredients": "Huile de tournesol, vinaigre de cidre, moutarde, ail des ours, épices.",
+        "suggestion": "L’ail des ours apporte sa touche de caractère aux crudités et aux salades de lentilles."
+    },
+    {
+        "section": "vinaigrettes",
+        "name": "Aux fines herbes",
+        "ingredients": "Huile de tournesol, vinaigre de cidre, moutarde, fines herbes, épices.",
+        "suggestion": "Une vinaigrette tout en fraîcheur pour les salades du quotidien et les pommes de terre tièdes."
+    },
+    {
+        "section": "vinaigrettes",
+        "name": "Miel, moutarde & thym",
+        "ingredients": "Huile de tournesol, vinaigre de cidre, miel, moutarde, thym, épices.",
+        "suggestion": "La douceur du miel et le caractère de la moutarde pour accompagner une salade de volaille ou des carottes rôties."
+    },
+    {
+        "section": "vinaigrettes",
+        "name": "Balsamique & orange",
+        "ingredients": "Huile de tournesol, vinaigre balsamique, jus d’orange, moutarde, fines herbes, épices.",
+        "suggestion": "Une note fruitée pour réveiller une salade composée ou accompagner des betteraves."
+    },
+    {
+        "section": "creme-caramel",
+        "name": "Crème caramel au beurre salé",
+        "ingredients": "Sucre, beurre salé, crème fraîche, sel.",
+        "suggestion": "À napper sur des crêpes, à verser sur une glace ou à déguster avec une brioche."
+    }
+]

@@ -47,6 +47,24 @@ defined('ABSPATH') || exit;
 <!-- wp:group {"className":"footer-column","layout":{"type":"default"}} -->
 <div class="wp-block-group footer-column">
 <!-- wp:paragraph {"className":"footer-label"} -->
+<p class="footer-label">MARQUES</p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"footer-contact","textColor":"cream","layout":{"type":"default"}} -->
+<div class="wp-block-group footer-contact has-cream-color has-text-color">
+<!-- wp:paragraph -->
+<p><a href="<?php echo esc_url(home_url('/confitures/#le-gout-retrouvé')); ?>">Le goût retrouvé</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><a href="<?php echo esc_url(home_url('/confitures/#celinette')); ?>">Célinette</a></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><a href="<?php echo esc_url(home_url('/aux-vraies-saveurs/')); ?>">Aux vraies saveurs</a></p>
+<!-- /wp:paragraph -->
+</div><!-- /wp:group -->
+</div><!-- /wp:group -->
+<!-- wp:group {"className":"footer-column","layout":{"type":"default"}} -->
+<div class="wp-block-group footer-column">
+<!-- wp:paragraph {"className":"footer-label"} -->
 <p class="footer-label">SUIVRE</p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"className":"footer-social","layout":{"type":"default"}} -->

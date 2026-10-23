@@ -1,3 +1,9 @@
+/*
+ * Animations partagées des sections
+ * section-motion.js déclenche les classes lgr-reveal-* et calcule le décalage de cascade --lgr-reveal-delay.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Apparition au scroll : fondu et remontée de 32 px, une seule fois par élément. */
 @media (prefers-reduced-motion: no-preference) {
   .lgr-reveal-pending {
     opacity: 0;
@@ -6,6 +12,7 @@
   .lgr-reveal-visible {
     animation: lgr-reveal 900ms cubic-bezier(.19, 1, .22, 1) var(--lgr-reveal-delay, 0ms) both;
   }
+/* 02. Nos valeurs : flottement continu avec des durées et phases distinctes. */
   .lgr-values .lgr-value-card {
     animation: lgr-value-float 7s ease-in-out infinite;
   }
@@ -13,14 +20,17 @@
   .lgr-values .lgr-value-card:nth-child(3) { animation-duration: 7.5s; animation-delay: -4s; }
   .lgr-values .lgr-value-card:nth-child(4) { animation-duration: 8.5s; animation-delay: -1s; }
 }
+/* 03. Trajectoire d’apparition des cartes et en-têtes. */
 @keyframes lgr-reveal {
   from { opacity: 0; transform: translateY(32px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* 04. Trajectoire du flottement des cercles de valeurs. */
 @keyframes lgr-value-float {
   0%, 100% { transform: translateY(4px) rotate(-.6deg); }
   50% { transform: translateY(-10px) rotate(.6deg); }
 }
+/* 05. Gutenberg : conserver les éléments visibles et immobiles pour l’édition. */
 .editor-styles-wrapper .lgr-value-card,
 .editor-styles-wrapper .lgr-reveal-pending,
 .editor-styles-wrapper .lgr-reveal-visible {

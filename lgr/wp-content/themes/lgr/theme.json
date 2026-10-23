@@ -26,7 +26,10 @@
         { "slug": "cream", "name": "Crème", "color": "#E9DECE" },
         { "slug": "coral", "name": "Corail", "color": "#D95853" },
         { "slug": "sage", "name": "Sauge", "color": "#AEC1A6" },
-        { "slug": "terra", "name": "Terre cuite", "color": "#FBC14A" }
+        { "slug": "terra", "name": "Terre cuite", "color": "#FBC14A" },
+        { "slug": "orange", "name": "Orange — étiquette", "color": "#E28436" },
+        { "slug": "mauve", "name": "Mauve — étiquette", "color": "#4E2956" },
+        { "slug": "green", "name": "Vert — étiquette", "color": "#3E744F" }
       ]
     },
     "typography": {

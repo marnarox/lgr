@@ -1,34 +1,129 @@
-/* Editable native grid; align cards along the common bottom edge. */
-.lgr-brands-content { box-sizing: border-box; max-width: 1920px; margin-inline: auto; }
-.lgr-brands-grid { align-items: end; }
-.lgr-brand-card { display: grid; grid-template-rows: subgrid; }
-.lgr-brand-card > .block-editor-inner-blocks,
-.lgr-brand-card > .block-editor-inner-blocks > .block-editor-block-list__layout { display: contents; }
-.lgr-brand-card .wp-block-image { align-self: end; }
-.lgr-brand-card > .wp-block-group { align-self: start; }
-.lgr-brands-grid .lgr-brand-card > .wp-block-image { margin: 0; }
-.lgr-brands-grid .lgr-brand-card > .wp-block-group { margin-top: 0; }
-.lgr-brand-mark { width: 16px; height: 16px; min-width: 16px; flex: 0 0 16px; }
-.lgr-brand-artwork { position: relative; isolation: isolate; width: 100%; align-self: end; }
-.lgr-brand-card > .lgr-brand-artwork { align-self: end; }
-.lgr-brand-artwork--lgr { aspect-ratio: 339 / 451; }
-.lgr-brand-artwork--saveurs { aspect-ratio: 339 / 408; }
-.lgr-brand-artwork--celinette { aspect-ratio: 338 / 350; }
-.lgr-brand-artwork .lgr-brand-backdrop {
-  position: absolute; inset: 0 0 40px; margin: 0; z-index: -1;
-  transform-origin: center bottom;
+/*
+ * Nos marques — section de l’accueil
+ * La grille et les couleurs restent éditables. brand-backgrounds.js anime les fonds indépendamment des photos.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Conteneur et cartes : partager les rangées avec subgrid pour aligner les visuels par le bas. */
+.lgr-brands-content {
+  box-sizing: border-box;
+  max-width: 1920px;
+  margin-inline: auto;
 }
-.lgr-brand-artwork .wp-block-image {
-  position: absolute; bottom: 0; left: -20%; width: 140%; height: 71%; margin: 0;
+.lgr-brands-grid {
+  --lgr-brands-column-min: 100%;
+  align-items: end;
 }
-.lgr-brand-artwork--saveurs .wp-block-image { height: 82%; }
-.lgr-brand-artwork--celinette .wp-block-image { height: 90%; }
-.lgr-brand-artwork .wp-block-image img { width: 100%; height: 100% !important; object-fit: contain; }
-@media (prefers-reduced-motion: no-preference) {
-  .lgr-brand-artwork.lgr-brand-bg-pending .lgr-brand-backdrop { transform: scaleY(0); }
-  .lgr-brand-artwork.lgr-brand-bg-visible .lgr-brand-backdrop {
-    animation: lgr-brand-background-grow 1000ms cubic-bezier(.19, 1, .22, 1) var(--brand-bg-delay, 0ms) both;
+/* La grille automatique native reste réglable dans Gutenberg. */
+@media (min-width: 600px) {
+  .lgr-brands-grid {
+    --lgr-brands-column-min: calc((100% - 32px) / 2);
   }
 }
-@keyframes lgr-brand-background-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-.editor-styles-wrapper .lgr-brand-backdrop { animation: none !important; transform: none !important; }
+@media (min-width: 1025px) {
+  .lgr-brands-grid {
+    --lgr-brands-column-min: calc((100% - 64px) / 3);
+  }
+}
+.lgr-brand-card {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: subgrid;
+}
+.lgr-brand-card > .block-editor-inner-blocks,
+.lgr-brand-card
+  > .block-editor-inner-blocks
+  > .block-editor-block-list__layout {
+  display: contents;
+}
+.lgr-brand-card .wp-block-image {
+  align-self: end;
+}
+.lgr-brand-card > .wp-block-group {
+  align-self: start;
+}
+.lgr-brands-grid .lgr-brand-card > .wp-block-image {
+  margin: 0;
+}
+.lgr-brands-grid .lgr-brand-card > .wp-block-group {
+  margin-top: 0;
+}
+/* 02. Identité des marques : dimensions des pastilles. */
+.lgr-brand-mark {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  flex: 0 0 16px;
+}
+/* 03. Visuels : proportions propres à chaque pot et contexte de superposition. */
+.lgr-brand-artwork {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  /* Les marges transparentes des photos agrandies ne doivent pas déborder de la carte. */
+  overflow: clip;
+  align-self: end;
+}
+.lgr-brand-card > .lgr-brand-artwork {
+  align-self: end;
+}
+.lgr-brand-artwork--lgr {
+  aspect-ratio: 339 / 451;
+}
+.lgr-brand-artwork--saveurs {
+  aspect-ratio: 339 / 408;
+}
+.lgr-brand-artwork--celinette {
+  aspect-ratio: 338 / 350;
+}
+/* 04. Fond natif : calque coloré ancré sur une ligne basse commune. */
+.lgr-brand-artwork .lgr-brand-backdrop {
+  position: absolute;
+  inset: 0 0 40px;
+  margin: 0;
+  z-index: -1;
+  transform-origin: center bottom;
+}
+/* 05. Photos détourées : compenser les marges transparentes des fichiers source. */
+.lgr-brand-artwork .wp-block-image {
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  width: 140%;
+  height: 71%;
+  margin: 0;
+}
+.lgr-brand-artwork--saveurs .wp-block-image {
+  height: 82%;
+}
+.lgr-brand-artwork--celinette .wp-block-image {
+  height: 90%;
+}
+.lgr-brand-artwork .wp-block-image img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: contain;
+}
+/* 06. Apparition du fond : croissance depuis le bas, décalée par --brand-bg-delay. */
+@media (prefers-reduced-motion: no-preference) {
+  .lgr-brand-artwork.lgr-brand-bg-pending .lgr-brand-backdrop {
+    transform: scaleY(0);
+  }
+  .lgr-brand-artwork.lgr-brand-bg-visible .lgr-brand-backdrop {
+    animation: lgr-brand-background-grow 1000ms cubic-bezier(0.19, 1, 0.22, 1)
+      var(--brand-bg-delay, 0ms) both;
+  }
+}
+/* 07. Trajectoire du fond coloré. */
+@keyframes lgr-brand-background-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+/* 08. Gutenberg : afficher immédiatement les fonds pour les sélectionner. */
+.editor-styles-wrapper .lgr-brand-backdrop {
+  animation: none !important;
+  transform: none !important;
+}

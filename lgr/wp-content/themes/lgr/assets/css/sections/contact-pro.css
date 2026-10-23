@@ -1,11 +1,28 @@
-/* Follow the form block's editable typography and spacing settings. */
-.lgr-contact-form .heading-input-label-gutena p { font-size: inherit; line-height: inherit; margin: 0; }
-.lgr-contact-form label { font-size: var(--wp--gutena-forms--label-font-size, 12px); line-height: var(--wp--gutena-forms--label-line-height, 1.2); font-weight: var(--wp--gutena-forms--label-font-weight, 400); }
-.lgr-contact-form > * + * { margin-block-start: var(--wp--style--block-gap, 32px); }
-.lgr-contact-form .wp-block-column { min-width: 0; }
-.lgr-contact-form input, .lgr-contact-form select, .lgr-contact-form textarea { box-sizing: border-box; max-width: 100%; font-family: inherit; }
-.lgr-contact-form .hero-button-secondary { --ripple-fill: var(--wp--preset--color--coral); --ripple-text: var(--wp--preset--color--charcoal); }
-@media (hover: hover) and (pointer: fine) {
-  .lgr-contact-form .hero-button-secondary .wp-block-button__link:hover { color: var(--ripple-text) !important; border-color: var(--ripple-fill); }
+/*
+ * Formulaire — Espace pro
+ * Les champs, couleurs, polices, espacements et états du bouton se règlent
+ * dans Forminator > Formulaires > Contact professionnels > Apparence.
+ * Le groupe Gutenberg extérieur conserve son fond et son padding éditables.
+ */
+/* 01. Intégration au groupe Gutenberg : neutraliser les marges externes du formulaire. */
+.lgr-forminator-contact .forminator-ui.forminator-custom-form {
+  margin-block: 0;
 }
-.lgr-contact-form .hero-button-secondary .wp-block-button__link:focus-visible { color: var(--ripple-text) !important; background: var(--ripple-fill) !important; }
+/* 02. Contenir les champs dans la largeur disponible, y compris sur mobile. */
+.lgr-forminator-contact {
+  min-width: 0;
+}
+.lgr-forminator-contact input,
+.lgr-forminator-contact select,
+.lgr-forminator-contact textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+/* 03. Select2 : reprendre le rythme des champs texte sans figer leur hauteur.
+ * La taille de police et les couleurs restent pilotées par Forminator.
+ */
+.lgr-forminator-contact .forminator-ui .select2-selection--single .select2-selection__rendered {
+  /* Select2 génère un sélecteur avec ID : priorité limitée à ces deux corrections. */
+  line-height: 1.3 !important;
+  padding-block: 9px !important;
+}

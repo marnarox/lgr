@@ -27,13 +27,30 @@ Textes, images, lien, couleur et image de fond sont des réglages natifs.
 
 ## Formulaire Contact pro
 
-Le formulaire utilise l'extension Gutena Forms, installée depuis WordPress.org.
-Les champs, libellés, choix du commerce et réglages de notification se modifient
-dans Gutenberg en sélectionnant le bloc Form du groupe Contact pro.
-Les notifications administrateur et utilisateur sont désactivées.
-Le destinataire `configuration-requise@example.invalid` est un emplacement
-provisoire, nécessaire au rendu du bouton par l'extension ; aucun e-mail n'est envoyé.
-Pour connecter le formulaire : remplacer ce destinataire dans Notifications,
-activer la notification administrateur, adapter le message de confirmation et
-vérifier la réception réelle avec le transport mail de l'hébergement.
-L'adresse affichée dans les coordonnées reste distincte du destinataire du formulaire.
+Le formulaire utilise Forminator (version gratuite), intégré à la page par son
+bloc Gutenberg natif. Dans WordPress : Forminator > Formulaires > Contact
+professionnels. Les champs, les options de commerce, le bouton, les couleurs,
+les polices, les espacements et les notifications se règlent dans Forminator.
+Le groupe extérieur (fond crème et padding) reste éditable dans Gutenberg.
+
+Les cinq champs reprennent le formulaire précédent. Le honeypot est activé.
+Les notifications sont vides et l'enregistrement des soumissions est désactivé
+pour le mode démonstration ; aucune demande ne doit être considérée comme reçue.
+La confirmation indique explicitement qu'aucun e-mail n'a été envoyé.
+Pour la mise en service : configurer la notification, son destinataire et le
+Reply-To sur email-1 ; connecter le transport mail authentifié et tester la
+réception réelle. Adapter la confirmation. Turnstile reste à connecter avec
+les clés du compte client ; il n'est pas activé sans ces clés.
+
+L'identifiant local est conservé dans l'option lgr_forminator_contact_id (116
+sur cette base). La page et la composition utilisent ce même ID ; un transfert
+vers une autre station nécessite la base de données, comme les autres contenus.
+Le fichier wp-content/structure/contact-pro.forminator.json est une copie de
+repérage des champs et réglages, pas un export d'import garanti par Forminator.
+Pour un transfert indépendant, utiliser l'export natif de Forminator.
+
+La page professionnelle a été relue depuis la base et validée avec les scripts
+WordPress et Forminator : 82 blocs, aucun invalide. Validation obligatoire et
+soumission de démonstration testées ; rendu mobile contrôlé à 375 px.
+Le contrôle réel dans Gutenberg et l'éditeur Forminator reste à effectuer après
+reconnexion à WordPress.

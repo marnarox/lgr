@@ -1,4 +1,9 @@
-/* Reuse the actual responsive composition, accounting only for editor wrappers. */
+/*
+ * Adaptations propres à Gutenberg / FSE
+ * Complète les styles partagés. Les wrappers de l’éditeur diffèrent du HTML public ; les animations sont neutralisées pour l’édition.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Hero : reconstruire la grille à travers les wrappers de blocs imbriqués. */
 .editor-styles-wrapper .lgr-hero > .block-editor-inner-blocks,
 .editor-styles-wrapper .lgr-hero > .block-editor-inner-blocks > .block-editor-block-list__layout { position: static; }
 .editor-styles-wrapper .hero-copy > .block-editor-inner-blocks { display: contents; }
@@ -9,18 +14,23 @@
   grid-column: 1 / -1;
 }
 .editor-styles-wrapper .hero-copy > .block-editor-inner-blocks > .block-editor-block-list__layout > * { grid-column: 1 / -1; }
+/* 02. Hero : masquer les rideaux et laisser les textes visibles pendant l’édition. */
 .editor-styles-wrapper .lgr-hero::before,
 .editor-styles-wrapper .lgr-hero .hero-photo::before { content: none !important; }
 .editor-styles-wrapper .hero-tagline,
 .editor-styles-wrapper .hero-title,
 .editor-styles-wrapper .hero-actions { animation: none !important; opacity: 1; transform: none; }
+/* 03. Marquee : immobiliser le bandeau pour permettre sa sélection. */
 .editor-styles-wrapper .brand-marquee-track { animation: none; }
+/* 04. Canevas : supprimer le décalage réservé au header du site public. */
 .editor-styles-wrapper .wp-site-blocks { padding-top: 0; }
 .editor-styles-wrapper .site-content,
 .editor-styles-wrapper .site-content > .wp-block-post-content { width: 100%; max-width: none; margin-top: 0; }
+/* 05. Marquee : gérer ses différents wrappers Gutenberg en pleine largeur. */
 .editor-styles-wrapper [data-type="core/html"]:has(.lgr-brand-marquee),
 .editor-styles-wrapper [data-type="core/freeform"]:has(.lgr-brand-marquee),
 .editor-styles-wrapper [data-type="core/pattern"]:has(.lgr-brand-marquee) { width: 100%; max-width: none !important; margin: 0 !important; }
+/* 06. Hero desktop : même occupation des colonnes que sur le site public. */
 @media (min-width: 1280px) {
   .editor-styles-wrapper .hero-copy > .block-editor-inner-blocks > .block-editor-block-list__layout > * { grid-column: 1 / span 6; }
 }

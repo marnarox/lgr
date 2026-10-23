@@ -1,0 +1,117 @@
+{
+    "changed": [
+        "Myrtille — 300 g",
+        "Poire-Gingembre — 300 g",
+        "Fraise — 300 g",
+        "Framboise — 300 g",
+        "Cerise — 300 g",
+        "Abricot — 300 g",
+        "Prune — 300 g",
+        "Rhubarbe — 300 g",
+        "Fraise-Rhubarbe — 300 g",
+        "Myrtille — 145 g",
+        "Poire-Gingembre — 145 g",
+        "Figue — 145 g"
+    ],
+    "media": {
+        "Myrtille — 300 g": {
+            "id": 126,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-myrtille-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Myrtille — 300 g",
+            "source": "LGR_pots_2026_-19.jpg"
+        },
+        "Poire-Gingembre — 300 g": {
+            "id": 127,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-poire-gingembre-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Poire-Gingembre — 300 g",
+            "source": "LGR_pots_2026_-32.jpg"
+        },
+        "Fraise — 300 g": {
+            "id": 128,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-fraise-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Fraise — 300 g",
+            "source": "LGR_pots_2026_-35.jpg"
+        },
+        "Framboise — 300 g": {
+            "id": 129,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-framboise-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Framboise — 300 g",
+            "source": "LGR_pots_2026_-11.jpg"
+        },
+        "Cerise — 300 g": {
+            "id": 130,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-cerise-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Cerise — 300 g",
+            "source": "LGR_pots_2026_-16.jpg"
+        },
+        "Abricot — 300 g": {
+            "id": 131,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-abricot-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Abricot — 300 g",
+            "source": "LGR_pots_2026_-25.jpg"
+        },
+        "Prune — 300 g": {
+            "id": 132,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-prune-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Prune — 300 g",
+            "source": "LGR_pots_2026_-17.jpg"
+        },
+        "Rhubarbe — 300 g": {
+            "id": 133,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-rhubarbe-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Rhubarbe — 300 g",
+            "source": "LGR_pots_2026_-33.jpg"
+        },
+        "Fraise-Rhubarbe — 300 g": {
+            "id": 134,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-fraise-rhubarbe-300-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Fraise-Rhubarbe — 300 g",
+            "source": "LGR_pots_2026_-15.jpg"
+        },
+        "Myrtille — 145 g": {
+            "id": 135,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-myrtille-145-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Myrtille — 145 g",
+            "source": "LGR_pots_2026_-9.jpg"
+        },
+        "Poire-Gingembre — 145 g": {
+            "id": 136,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-poire-gingembre-145-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Poire-Gingembre — 145 g",
+            "source": "LGR_pots_2026_-1.jpg"
+        },
+        "Figue — 145 g": {
+            "id": 137,
+            "url": "http:\/\/lgr.localhost\/wp-content\/uploads\/2026\/10\/le-gout-retrouve-figue-145-g.jpg",
+            "alt": "Pot de confiture Le goût retrouvé — Figue — 145 g",
+            "source": "LGR_pots_2026_-5.jpg"
+        }
+    },
+    "without_corresponding_photo": [
+        "le-gout-retrouvé : Figue — 300 g",
+        "le-gout-retrouvé : Mirabelle — 300 g",
+        "le-gout-retrouvé : Orange amère — 300 g",
+        "le-gout-retrouvé : Cassis — 300 g",
+        "le-gout-retrouvé : Groseille — 300 g",
+        "le-gout-retrouvé : Mûre — 300 g",
+        "le-gout-retrouvé : Pêche de vigne — 300 g",
+        "le-gout-retrouvé : Coing — 300 g",
+        "le-gout-retrouvé : Abricot-Coing — 300 g",
+        "le-gout-retrouvé : Fruits rouges — 300 g",
+        "le-gout-retrouvé : Pomme-Cannelle — 300 g",
+        "le-gout-retrouve-145 : Fraise — 145 g",
+        "le-gout-retrouve-145 : Framboise — 145 g",
+        "le-gout-retrouve-145 : Cerise — 145 g",
+        "le-gout-retrouve-145 : Abricot — 145 g",
+        "le-gout-retrouve-145 : Rhubarbe — 145 g",
+        "le-gout-retrouve-145 : Orange amère — 145 g",
+        "celinette : Abricot — 300 g",
+        "celinette : Fraise — 300 g",
+        "celinette : Framboise — 300 g",
+        "celinette : Cerise — 300 g",
+        "celinette : Myrtille — 300 g",
+        "celinette : Orange — 300 g",
+        "celinette : Prune — 300 g",
+        "celinette : Figue — 300 g"
+    ]
+}

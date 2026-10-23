@@ -1,4 +1,9 @@
-/* Columns, captions, colors and content are native Gutenberg blocks. */
+/*
+ * Cartes produits — pages Confitures et AVS
+ * À distinguer des mosaïques de l’accueil (product-grid.css). catalogue.js mesure --product-name-height et pilote les ingrédients.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Socle mobile / tactile : photo, étiquette et ingrédients dans le flux. */
 .lgr-catalogue-grid { padding-bottom: 0; }
 .lgr-catalogue-cell { min-width: 0; }
 .lgr-catalogue-card { position: relative; overflow: hidden; min-width: 0; }
@@ -12,18 +17,22 @@
 .lgr-product-ingredients { order: 1; margin-top: 16px; }
 .lgr-product-ingredients summary { cursor: pointer; font-family: 'Montserrat Alternates', sans-serif; font-size: 14px; font-weight: 700; }
 .lgr-product-ingredients p { margin-block: 12px 0; line-height: 1.55; }
+/* 02. Pages catalogue sans hero : réserver l’espace du header fixe. */
 body:not(:has(.lgr-hero)):has(.lgr-catalogue-grid) .site-content {
   width: 100%; margin-top: 128px;
 }
+/* 03. Tablette : décaler la deuxième colonne de 48 px et compenser en bas. */
 @media (min-width: 600px) {
   .lgr-catalogue-grid { padding-bottom: 48px; }
   .lgr-catalogue-cell:nth-child(2n) { transform: translateY(48px); }
 }
+/* 04. Desktop : décaler uniquement la colonne centrale de 84 px. */
 @media (min-width: 1280px) {
   .lgr-catalogue-grid { padding-bottom: 84px; }
   .lgr-catalogue-cell:nth-child(2n) { transform: none; }
   .lgr-catalogue-cell:nth-child(3n + 2) { transform: translateY(84px); }
 }
+/* 05. Interaction souris / clavier : transformer l’étiquette en panneau superposé. */
 @media (min-width: 600px) and (hover: hover) and (pointer: fine) {
   .lgr-catalogue-card .lgr-product-panel {
     position: absolute; top: calc(100% - 103px); left: 16px; right: 16px; bottom: 16px;
@@ -36,32 +45,84 @@ body:not(:has(.lgr-hero)):has(.lgr-catalogue-grid) .site-content {
   }
   .lgr-catalogue-card .lgr-product-name h3 {
     font-size: 32px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    /* Reserve ink space below the baseline for Cormorant's descenders. */
+    /* Préserver les jambages descendants de Cormorant sous la ligne de base. */
     padding-bottom: .12em;
   }
+/* 06. Ingrédients : position calculée à partir de la hauteur du nom, mesurée par catalogue.js. */
   .lgr-catalogue-card .lgr-product-ingredients {
     position: absolute; bottom: calc(28px + var(--product-name-height, 64px) + 24px);
     left: 32px; right: 32px; margin: 0;
     padding-bottom: 24px; border-bottom: 1px solid rgba(30, 30, 30, .3);
-    max-height: calc(100% - var(--product-name-height, 64px) - 84px); overflow: auto;
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 350ms ease, transform 600ms cubic-bezier(.19, 1, .22, 1);
+    max-height: var(--product-ingredients-max-height, calc(100% - var(--product-name-height, 64px) - 84px)); overflow: auto;
+    /* Keep long compositions scrollable without flashing browser chrome while
+     * the panel's available height changes during opening and closing. */
+    scrollbar-width: none;
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 220ms ease-out, transform 220ms ease-out;
   }
   .lgr-catalogue-card .lgr-catalogue-photo img { transition: transform 1100ms cubic-bezier(.19, 1, .22, 1); }
+  .lgr-catalogue-card .lgr-product-ingredients::-webkit-scrollbar { display: none; }
+  /* Desktop reveals the disclosure automatically: hide its marker in every
+   * animation state, including after pointerleave and before details closes. */
+  .lgr-catalogue-card .lgr-product-ingredients summary { display: block; list-style: none; }
+  .lgr-catalogue-card .lgr-product-ingredients summary::marker { content: ''; }
+  .lgr-catalogue-card .lgr-product-ingredients summary::-webkit-details-marker { display: none; }
+/* 07. États actifs : déployer le panneau et faire apparaître les ingrédients. */
   .lgr-catalogue-card:is(:hover, :focus-within) .lgr-product-panel { inset: 0; border-radius: 0 !important; }
   .lgr-catalogue-card:is(:hover, :focus-within) .lgr-product-name { bottom: 28px; left: 32px; right: 32px; }
   .lgr-catalogue-card:is(:hover, :focus-within) .lgr-product-ingredients summary { list-style: none; }
   .lgr-catalogue-card:is(:hover, :focus-within) .lgr-product-ingredients summary::-webkit-details-marker { display: none; }
-  .lgr-catalogue-card:is(:hover, :focus-within) .lgr-product-ingredients { opacity: 1; transform: none; transition-delay: 320ms; }
+  .lgr-catalogue-card:is(:hover, :focus-within) .lgr-product-ingredients {
+    opacity: 1; transform: none;
+    transition-duration: 600ms;
+    transition-timing-function: cubic-bezier(.22, 1, .36, 1);
+    transition-delay: 520ms;
+  }
   .lgr-catalogue-card:is(:hover, :focus-within) .lgr-catalogue-photo img { transform: scale(1.07); }
 }
-/* The editor shows all editable fields and keeps native details interactions. */
+
+/* 08. Gutenberg : montrer les champs dans le flux lorsque la carte ou un de ses blocs est sélectionné. */
+/* Essai limité aux premières cartes : vignette compacte, toujours superposée à la photo entière.
+ * Les tailles des textes se règlent dans les blocs Gutenberg.
+ */
+@media (min-width: 600px) and (hover: hover) and (pointer: fine) {
+  .lgr-catalogue-card.lgr-card-compact:not(:hover):not(:focus-within) .lgr-product-panel {
+    top: calc(100% - var(--product-name-height, 48px) - 28px);
+    bottom: 12px; left: 12px; right: 12px;
+  }
+  .lgr-catalogue-card.lgr-card-compact:not(:hover):not(:focus-within) .lgr-product-name {
+    bottom: 8px; left: 12px; right: 12px;
+  }
+}
 .editor-styles-wrapper .lgr-catalogue-card:is(.is-selected, .has-child-selected) .lgr-product-panel,
 .editor-styles-wrapper .lgr-catalogue-card:is(.is-selected, .has-child-selected) .lgr-product-name,
 .editor-styles-wrapper .lgr-catalogue-card:is(.is-selected, .has-child-selected) .lgr-product-ingredients {
   position: relative; inset: auto; opacity: 1; transform: none; max-height: none; overflow: visible; transition: none;
 }
 .editor-styles-wrapper .lgr-catalogue-card .lgr-catalogue-photo img { transform: none; }
+/* 09. Accessibilité : changements d’état sans transition. */
+/* Reserve half the native label height below the photograph. The card's
+ * total height remains stable when the ingredient panel opens on hover. */
+@media (min-width: 600px) and (hover: hover) and (pointer: fine) {
+  .lgr-label-overlap .lgr-catalogue-card::after {
+    content: '';
+    display: block;
+    height: calc(var(--product-label-height, 96px) / 2);
+  }
+  .lgr-label-overlap .lgr-catalogue-card:not(:hover):not(:focus-within) .lgr-product-panel {
+    top: calc(100% - var(--product-label-height, 96px));
+    bottom: 0;
+    height: auto;
+    box-sizing: border-box;
+  }
+  .lgr-label-overlap .lgr-catalogue-card:not(:hover):not(:focus-within) .lgr-product-name {
+    bottom: var(--product-label-bottom, 16px);
+  }
+  .editor-styles-wrapper .lgr-label-overlap .lgr-catalogue-card:is(.is-selected, .has-child-selected)::after { display: none; }
+  .editor-styles-wrapper .lgr-label-overlap .lgr-catalogue-card:is(.is-selected, .has-child-selected) .lgr-product-panel,
+  .editor-styles-wrapper .lgr-label-overlap .lgr-catalogue-card:is(.is-selected, .has-child-selected) .lgr-product-name { position: relative; inset: auto; height: auto; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .lgr-catalogue-card *, .lgr-catalogue-card *::before { transition: none !important; }
 }

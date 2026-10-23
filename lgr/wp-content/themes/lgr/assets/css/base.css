@@ -1,16 +1,25 @@
+/*
+ * Socle commun du site
+ * Règles globales : dimensions des boîtes, défilement et navigation au clavier.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Dimensions des éléments : inclure bordures et padding dans les largeurs. */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+/* 02. Navigation par ancres : défilement doux. */
 html {
   scroll-behavior: smooth;
 }
+/* 03. Accessibilité : repère de focus visible pour les liens et boutons. */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 5px;
 }
+/* 04. Accessibilité : supprimer le défilement animé si demandé. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

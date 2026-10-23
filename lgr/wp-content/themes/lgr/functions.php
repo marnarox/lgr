@@ -29,6 +29,7 @@ add_action('enqueue_block_assets', function () {
         'contact-pro' => 'assets/css/sections/contact-pro.css',
         'confitures' => 'assets/css/sections/confitures.css',
         'catalogue' => 'assets/css/components/catalogue.css',
+        'section-dots' => 'assets/css/components/section-dots.css',
         'section-motion' => 'assets/css/components/section-motion.css',
     );
     $dependencies = array('lgr-fonts', 'lgr-colors');
@@ -54,6 +55,36 @@ add_action('wp_head', function () {
     echo '<noscript><style>.lgr-hero::before,.lgr-hero .hero-photo::before{content:none!important}</style></noscript>';
 });
 add_filter('show_admin_bar', '__return_false');
+
+// Catalogue: landscape sources fill portrait cards with object-fit: cover.
+// Browser sizes="auto" only measures the element width, so its chosen thumbnail
+// can be too small after cropping, particularly on high-density displays.
+// Keep the image selected in Gutenberg; use its src without responsive downsizing.
+add_filter('render_block_core/image', function ($content, $block) {
+    $classes = preg_split('/\s+/', $block['attrs']['className'] ?? '');
+    if (!in_array('lgr-catalogue-photo', $classes, true)) {
+        return $content;
+    }
+    $html = new WP_HTML_Tag_Processor($content);
+    while ($html->next_tag('IMG')) {
+        $html->set_attribute('data-lgr-catalogue-source', 'original');
+        $html->remove_attribute('srcset');
+        $html->remove_attribute('sizes');
+    }
+    return $html->get_updated_html();
+}, 20, 2);
+
+// the_content adds srcset again after blocks render; limit this correction to
+// images marked by the catalogue block above. Stored block markup is unchanged.
+add_filter('wp_content_img_tag', function ($image) {
+    $html = new WP_HTML_Tag_Processor($image);
+    if ($html->next_tag('IMG') && $html->get_attribute('data-lgr-catalogue-source') === 'original') {
+        $html->remove_attribute('srcset');
+        $html->remove_attribute('sizes');
+    }
+    return $html->get_updated_html();
+}, 20);
+
 add_action('wp_enqueue_scripts', function () {
     $path = 'assets/js/navigation.js';
     wp_enqueue_script('lgr-navigation', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
@@ -63,8 +94,12 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('lgr-section-motion', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
     $path = 'assets/js/catalogue.js';
     wp_enqueue_script('lgr-catalogue', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
+    $path = 'assets/js/section-dots.js';
+    wp_enqueue_script('lgr-section-dots', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
     $path = 'assets/js/brand-backgrounds.js';
     wp_enqueue_script('lgr-brand-backgrounds', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
+    $path = 'assets/js/brand-marquee.js';
+    wp_enqueue_script('lgr-brand-marquee', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
     $path = 'assets/js/hero.js';
     wp_enqueue_script('lgr-hero', get_theme_file_uri($path), array(), (string) filemtime(get_theme_file_path($path)), array('strategy' => 'defer', 'in_footer' => true));
 });

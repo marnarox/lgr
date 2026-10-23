@@ -1,3 +1,9 @@
+/*
+ * Navigation principale
+ * Conserve le bloc Navigation natif. navigation.js pilote notamment la classe is-closing pour l’animation de fermeture.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Liens : casse, alignement et soulignement animé. */
 .primary-nav .wp-block-navigation-item__content {
   position: relative;
   text-transform: uppercase;
@@ -18,9 +24,11 @@
 .primary-nav .wp-block-navigation-item__content:focus-visible::after {
   clip-path: inset(0);
 }
+/* 02. Menu ouvert : padding du panneau natif. */
 .primary-nav .wp-block-navigation__responsive-container.is-menu-open {
   padding: 24px;
 }
+/* 03. Animations d’entrée : panneau latéral puis liens en cascade. */
 @keyframes lgr-menu-enter {
   from {
     opacity: 0;
@@ -41,15 +49,16 @@
     transform: none;
   }
 }
+/* 04. Menu mobile / tablette : bascule à 992 px et alignement des wrappers Gutenberg. */
 @media (max-width: 991px) {
-  /* Override Gutenberg's default 600 px breakpoint. */
+  /* Remplacer la bascule native de Gutenberg à 600 px. */
   .primary-nav .wp-block-navigation__responsive-container:not(.is-menu-open) {
     display: none;
   }
   .primary-nav .wp-block-navigation__responsive-container-open:not(.always-shown) {
     display: flex;
   }
-  /* Align the flex containers Gutenberg uses inside the mobile overlay. */
+  /* Aligner les conteneurs flex natifs dans le panneau mobile. */
   .primary-nav
     .wp-block-navigation__responsive-container.is-menu-open
     .wp-block-navigation__responsive-container-content,
@@ -97,6 +106,7 @@
     animation: lgr-menu-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 }
+/* 05. Accessibilité : neutraliser les animations d’entrée et de soulignement. */
 @media (prefers-reduced-motion: reduce) {
   .primary-nav
     .is-menu-open
@@ -112,7 +122,8 @@
   }
 }
 
-/* Keep Gutenberg buttons and accessible labels; replace only their icons. */
+/* Conserver les boutons et libellés accessibles natifs ; remplacer uniquement les icônes. */
+/* 06. Boutons natifs : icônes menu et fermeture, avec leurs libellés accessibles conservés. */
 .primary-nav .wp-block-navigation__responsive-container-open,
 .primary-nav .wp-block-navigation__responsive-container-close {
   width: 44px;
@@ -132,12 +143,14 @@
 .primary-nav .wp-block-navigation__responsive-container-close svg {
   opacity: 0;
 }
+/* 07. Mobile : réduire la hauteur visuelle du bouton de menu. */
 @media (width < 600px) {
   .primary-nav .wp-block-navigation__responsive-container-open {
     height: 32px;
     padding-block: 4px;
   }
 }
+/* 08. Contraste renforcé : réafficher les SVG natifs si les fonds CSS sont masqués. */
 @media (forced-colors: active) {
   .primary-nav .wp-block-navigation__responsive-container-open,
   .primary-nav .wp-block-navigation__responsive-container-close {
@@ -149,11 +162,13 @@
   }
 }
 
+/* 09. Typographie finale des liens : complément des règles de structure du début. */
 .primary-nav .wp-block-navigation-item__content {
   font-size: 12px;
   line-height: 1;
 }
 
+/* 10. Fermeture : état is-closing ajouté par navigation.js avant le retrait du panneau. */
 @keyframes lgr-menu-exit {
   from {
     opacity: 1;
@@ -170,6 +185,7 @@
     animation: lgr-menu-exit 250ms ease-in both;
   }
 }
+/* 11. Accessibilité : supprimer aussi l’animation de fermeture. */
 @media (prefers-reduced-motion: reduce) {
   .primary-nav
     .wp-block-navigation__responsive-container.is-menu-open.is-closing {
@@ -177,6 +193,7 @@
   }
 }
 
+/* 12. Écrans tactiles : retirer le soulignement prévu pour le survol à la souris. */
 @media (max-width: 991px), (hover: none) {
   .primary-nav .wp-block-navigation-item__content::after {
     content: none;

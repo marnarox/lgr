@@ -1,3 +1,9 @@
-/* Native responsive attributes control columns, type, colors and spacing. */
+/*
+ * En-têtes de gammes — Confitures et AVS
+ * Le nom historique du fichier couvre les deux catalogues. Les blocs natifs gèrent colonnes, typographie, couleurs et espacements.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Contenu des gammes : centrer et plafonner la largeur à 1920 px. */
 .lgr-range-content { max-width: 1920px; margin-inline: auto; box-sizing: border-box; }
+/* 02. En-tête : aligner le nom de la gamme et son grammage / nombre de produits en bas. */
 .lgr-range-header { align-items: end; }

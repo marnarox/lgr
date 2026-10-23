@@ -1,0 +1,35 @@
+{
+  "changed": [
+    "4 fruits — 300 g",
+    "Abricot — 300 g",
+    "Cerise — 300 g",
+    "Clémentines corses — 300 g",
+    "Fraise — 300 g",
+    "Fraise-Rhubarbe — 300 g",
+    "Fraises-Mûre-Violette — 300 g",
+    "Framboise — 300 g",
+    "Fruit de la passion — 300 g",
+    "Kiwi — 300 g",
+    "Myrtille — 300 g",
+    "Noël — 300 g",
+    "Orange-Cannelle — 300 g",
+    "Poire-Gingembre — 300 g",
+    "Poire-Kiwi — 300 g",
+    "Poire pirate — 300 g",
+    "Pomme-caramel beurre salé — 300 g",
+    "Prune président — 300 g",
+    "Clémentines corses — 145 g",
+    "Fraises-Mûre-Violette — 145 g",
+    "Kiwi — 145 g",
+    "Myrtille — 145 g",
+    "Noël — 145 g",
+    "Orange-Cannelle — 145 g",
+    "Poire-Gingembre — 145 g",
+    "Pomme-caramel beurre salé — 145 g"
+  ],
+  "missing": [
+    "Rhubarbe — 300 g",
+    "Figue — 145 g"
+  ],
+  "invalid": []
+}

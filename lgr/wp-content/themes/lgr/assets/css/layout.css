@@ -1,3 +1,9 @@
+/*
+ * Largeurs et espacements communs
+ * Les variables alimentent les presets Gutenberg section-gutter et section-block de theme.json.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Presets responsive : valeurs mobiles, puis adaptations tablette et desktop. */
 .editor-styles-wrapper,
 :root { --lgr-section-gutter: 16px; --lgr-section-block: 24px; }
 @media (min-width: 600px) {
@@ -9,17 +15,22 @@
 @media (min-width: 2020px) {
   .editor-styles-wrapper, :root { --lgr-section-gutter: 0px; }
 }
+/* 02. Conteneur principal des pages sans composition pleine largeur spécifique. */
 .site-content {
   width: min(var(--wp--style--global--content-size, 1920px), calc(100% - 40px));
   margin: 64px auto;
 }
+/* 03. Pages légales : laisser leurs groupes natifs gérer les marges et la largeur du contenu. */
 .site-content.lgr-legal-main { width: 100%; }
+/* 04. Ancres de section : réserver la place du header fixe lors du défilement. */
 .site-content section {
   scroll-margin-top: calc(var(--lgr-header-height, 100px) + 24px);
 }
+/* 05. Espacement par défaut entre grandes sections ; les marges natives peuvent le remplacer. */
 .site-content .wp-block-post-content > section {
   margin-block-end: 48px;
 }
+/* 06. Mobile : marge haute du conteneur principal. */
 @media (max-width: 599px) {
   .site-content {
     margin-top: 40px;

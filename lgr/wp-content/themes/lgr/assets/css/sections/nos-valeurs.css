@@ -1,9 +1,15 @@
-/* Layout complements only: colors, copy, spacing and columns are native blocks. */
+/*
+ * Nos valeurs — cercles de l’accueil
+ * Couleurs, images, titres et espacements proviennent des blocs. Le flottement est défini dans section-motion.css.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Contenu centré et plafonné à 1920 px. */
 .lgr-values-content {
   box-sizing: border-box;
   max-width: 1920px;
   margin-inline: auto;
 }
+/* 02. Grille native : une colonne, puis deux dès 981 px et quatre dès 1281 px. */
 .lgr-values-grid { --lgr-values-column-min: 100%; align-items: start; }
 @media (min-width: 981px) {
   .lgr-values-grid { --lgr-values-column-min: calc((100% - 20px) / 2); }
@@ -11,7 +17,9 @@
 @media (min-width: 1281px) {
   .lgr-values-grid { --lgr-values-column-min: calc((100% - 60px) / 4); }
 }
+/* 03. Mobile / tablette : limiter le diamètre et alterner l’alignement gauche / droite. */
 @media (max-width: 980px) {
+/* 04. Cercles : proportions carrées et contenu centré. */
   .lgr-value-card { width: min(85%, 360px); }
   .lgr-value-card:nth-child(odd) { justify-self: start; }
   .lgr-value-card:nth-child(even) { justify-self: end; }
@@ -29,15 +37,18 @@
 .lgr-value-card > .wp-block-image { margin: 0; }
 .lgr-value-card > .wp-block-group { width: 100%; }
 .lgr-value-card .wp-block-image img { display: block; }
+/* 05. Interactions : agrandissement, inclinaison et passage au premier plan. */
 @media (hover: hover) and (pointer: fine) {
   .lgr-value-card:hover { scale: 1.05; rotate: -2deg; z-index: 5; }
 }
 .lgr-value-card:focus-within { scale: 1.05; rotate: -2deg; z-index: 5; }
+/* 06. Gutenberg : centrer les wrappers et désactiver l’inclinaison de sélection. */
 .editor-styles-wrapper .lgr-value-card > .block-editor-inner-blocks { width: 100%; }
 .editor-styles-wrapper .lgr-value-card > .block-editor-inner-blocks > .block-editor-block-list__layout {
   display: flex; flex-direction: column; align-items: center;
 }
 .editor-styles-wrapper .lgr-value-card { scale: 1; rotate: 0deg; }
+/* 07. Accessibilité : supprimer les transitions et transformations de survol. */
 @media (prefers-reduced-motion: reduce) {
   .lgr-value-card { transition: none; }
   .lgr-value-card:hover, .lgr-value-card:focus-within { scale: 1; rotate: 0deg; }

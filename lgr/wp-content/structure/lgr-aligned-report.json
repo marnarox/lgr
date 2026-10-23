@@ -1,0 +1,58 @@
+{
+  "added": [
+    "4 fruits — 300 g",
+    "Clémentines corses — 300 g",
+    "Fraises-Mûre-Violette — 300 g",
+    "Fruit de la passion — 300 g",
+    "Kiwi — 300 g",
+    "Noël — 300 g",
+    "Orange-Cannelle — 300 g",
+    "Poire-Kiwi — 300 g",
+    "Poire pirate — 300 g",
+    "Pomme-caramel beurre salé — 300 g",
+    "Clémentines corses — 145 g",
+    "Fraises-Mûre-Violette — 145 g",
+    "Kiwi — 145 g",
+    "Noël — 145 g",
+    "Orange-Cannelle — 145 g",
+    "Pomme-caramel beurre salé — 145 g"
+  ],
+  "kept": [
+    "Abricot — 300 g",
+    "Cerise — 300 g",
+    "Fraise — 300 g",
+    "Fraise-Rhubarbe — 300 g",
+    "Framboise — 300 g",
+    "Myrtille — 300 g",
+    "Poire-Gingembre — 300 g",
+    "Prune président — 300 g",
+    "Rhubarbe — 300 g",
+    "Figue — 145 g",
+    "Myrtille — 145 g",
+    "Poire-Gingembre — 145 g"
+  ],
+  "removed": [
+    "Figue — 300 g",
+    "Mirabelle — 300 g",
+    "Orange amère — 300 g",
+    "Cassis — 300 g",
+    "Groseille — 300 g",
+    "Mûre — 300 g",
+    "Pêche de vigne — 300 g",
+    "Coing — 300 g",
+    "Abricot-Coing — 300 g",
+    "Fruits rouges — 300 g",
+    "Pomme-Cannelle — 300 g",
+    "Fraise — 145 g",
+    "Framboise — 145 g",
+    "Cerise — 145 g",
+    "Abricot — 145 g",
+    "Rhubarbe — 145 g",
+    "Orange amère — 145 g"
+  ],
+  "counts": {
+    "145": 9,
+    "300": 19
+  },
+  "invalid": []
+}

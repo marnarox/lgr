@@ -1,4 +1,9 @@
-/* Gutenberg applies the style class to the wrapper, not the link. */
+/*
+ * Boutons et remplissage animé
+ * Styles de bloc ripple-* sélectionnables dans Gutenberg. buttons.js calcule l’origine et la taille du cercle de remplissage.
+ * Chargement : functions.php ; règles conservées dans leur ordre de cascade.
+ */
+/* 01. Variantes : couleurs du remplissage et du texte au survol. */
 .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun),
 .btn-ripple {
   --ripple-fill: #1E1E1E;
@@ -8,19 +13,22 @@
 .wp-block-button.is-style-ripple-vert { --ripple-fill: #AEC1A6; --ripple-text: #1E1E1E; }
 .wp-block-button.is-style-ripple-brun { --ripple-fill: #FBC14A; --ripple-text: #1E1E1E; }
 
-/* Native outline colors remain editable; only the interaction changes them. */
+
+/* 02. Boutons produit : respecter les couleurs natives au repos et appliquer la variante au survol. */
 @media (hover: hover) and (pointer: fine) {
   .wp-block-button.lgr-product-button > .wp-block-button__link:hover {
     color: var(--ripple-text) !important;
     border-color: var(--ripple-fill) !important;
   }
 }
+/* 03. Boutons produit : état de focus clavier. */
 .wp-block-button.lgr-product-button > .wp-block-button__link:focus-visible {
   color: var(--ripple-text) !important;
   background: var(--ripple-fill) !important;
   border-color: var(--ripple-fill) !important;
 }
 
+/* 04. Socle visuel commun : boîte, bordure, alignement et transitions. */
 .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link,
 .btn-ripple {
   position: relative;
@@ -40,6 +48,7 @@
   transition: color 420ms ease, border-color 420ms ease;
 }
 
+/* 05. Calque de remplissage : cercle placé sous le texte, animé depuis le pointeur. */
 .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link::before,
 .btn-ripple::before {
   content: '';
@@ -56,6 +65,7 @@
   transition: transform 1250ms cubic-bezier(.19, 1, .22, 1);
 }
 
+/* 06. Survol à la souris : agrandir le cercle et temporiser le changement de texte. */
 @media (min-width: 600px) and (hover: hover) and (pointer: fine) {
   .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link:hover,
   .btn-ripple:hover {
@@ -67,6 +77,7 @@
   .btn-ripple:hover::before { transform: translate(-50%, -50%) scale(1); }
 }
 
+/* 07. Focus clavier : appliquer immédiatement le remplissage et le contraste. */
 .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link:focus-visible,
 .btn-ripple:focus-visible {
   color: var(--ripple-text);
@@ -75,6 +86,7 @@
   transition: none;
 }
 
+/* 08. Accessibilité : supprimer les transitions si les mouvements sont réduits. */
 @media (prefers-reduced-motion: reduce) {
   .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link,
   .wp-block-button:is(.is-style-ripple-charcoal, .is-style-ripple-rose, .is-style-ripple-vert, .is-style-ripple-brun) > .wp-block-button__link::before,
